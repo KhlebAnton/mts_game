@@ -1,0 +1,242 @@
+@font-face {
+    font-family: "MTS Wide";
+    src: url('fonts/MTSWide-Regular.ttf');
+}
+@font-face {
+    font-family: "MTS Text";
+    src: url('fonts/MTSText-Regular.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.418);
+    font-family: "MTS Wide";
+}
+.main.hidden {
+    transform: translateY(100%);
+    transition: 1s;
+    background: #ffffff00;
+}
+.screen {
+    padding-top: 48px ;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+body.bg_image {
+    background: url('img/bg.png') 50% / cover no-repeat;
+}
+.main {
+    position: fixed;
+    transition: 0.2s;
+    width: 100%;
+    padding-top: 48px ;
+    height: 100%;
+    
+}
+.game {
+   height: auto;
+}
+.game.hidden {
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+.screen.hidden {
+    visibility: hidden;
+    touch-action: none;
+    
+
+}
+#start_menu.hidden {
+    transform: translateX(-100%);
+    transition: 1s;
+}
+#instruction.hidden {
+    transform: translateX(100%);
+    transition: 1s;
+}
+#start_game.hidden {
+    transform: translateY(100%);
+    transition: 1s;
+}
+.wrapper {
+    width: 87%;
+    margin: 0 auto;
+    height: 100%;
+
+}
+h1.hello {
+    color: #FFF;
+
+    font-family: "MTS Wide";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.white_bg {
+    border-radius: 22px;
+    background-color: #FFF;
+    padding: 18px;
+
+}
+.welcome {
+    height: 15%; 
+    min-height: 115px;
+    color: #000;
+
+    font-family: "MTS Wide";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 26.4px */
+}
+.promo {
+    height: 55%;   
+    min-height: 358px;
+    color: #545454;
+    background-image: url('img/mask.png');
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+
+    font-family: "MTS Wide";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 22px */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.nav.game {
+    justify-content: space-between;
+}
+.info_btn {
+    transition: 0.2s;
+    width: 32px;
+    height: 32px;
+    background: url("img/info.svg"); 
+}
+.info_btn.again {
+    transition: 0.2s;
+    width: 32px;
+    height: 32px;
+    background: url("img/replay.svg"); 
+}
+.nav.hidden {
+    transition: 0.2s;
+    transform: translateY(-100px);
+    height: 0;
+}
+.info_btn.close {
+    background: url("img/close.svg"); 
+    transition: 0.2s;
+}
+.btn_start_game {
+    border-radius: 90px;
+    background: #FF0032;
+    display: flex;
+    width: 295px;
+    padding: 24px 45px;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+
+    text-align: center;
+    font-family: "MTS Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.btn_go_info {
+    margin-top: 10px;
+    display: flex;
+    width: 295px;
+    padding: 24px 45px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 90px;
+    background: #FFF;
+    color: #000;
+
+    text-align: center;
+    font-family: "MTS Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.btn_group{
+    margin: 0 auto;
+}
+#instruction h2 {
+    color: #FFF;
+
+    font-family: "MTS Wide";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.inst_item {
+    width: 100%;
+    min-height: 266px;
+    border-radius: 16px;
+    background: #FFF;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.inst_item p {
+    width: 70%;
+    color: #000;
+    text-align: center;
+    font-family: MTS Text;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 18px */
+}
+#instruction {
+    overflow: auto;
+    height:100%
+}
+.white_bg.start_game {
+    height: 80%;
+    background-image: url('img/bg_start.png');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.white_bg.start_game{
+    color: #000;
+font-family: "MTS Wide";
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 110%; /* 26.4px */
+}
+
