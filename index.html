@@ -126,7 +126,7 @@
             <div class="white_bg start_game">
                 <p>Чтобы перейти на следующий уровень – нужно собрать все иконки сервисов экосистемы МТС
                 </p>
-                <div onclick="next(this, 'game')" class="btn_start_game animated" ontouchstart>Начачть игру</div>
+                <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
             <div class="white_bg start_game">
                 <p>Вращай куб, чтобы увидеть иконки на задних гранях кубов
                 </p>
-                <div onclick="next(this, 'game')" class="btn_start_game animated" ontouchstart>Начачть игру</div>
+                <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
                 <h2>УРОВЕНЬ
                     ПРОЙДЕН!</h2>
                 <div class="btn_group">
-                    <div onclick="next(this, 'start_game_2')" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                    <div onclick="next(this, 'start_game_2'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
                     <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
                 </div>
 
@@ -187,7 +187,7 @@
                 <h2>УРОВЕНЬ
                     ПРОЙДЕН!</h2>
                 <div class="btn_group">
-                    <div onclick="next(this, 'start_game_3')" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                    <div onclick="next(this, 'start_game_3'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
                     <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
                 </div>
 
