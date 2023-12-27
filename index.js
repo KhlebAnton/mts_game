@@ -3,10 +3,37 @@ const btnInfoGame = document.getElementById('btn_info_game');
 const startMenu = document.getElementById('start_menu');
 const instruction = document.getElementById('instruction');
 const main = document.getElementById('main');
-const startGame = document.getElementById('start_game');
-const game = document.getElementById('game');
 
-let screenHiden;
+const game = document.getElementById('game');
+const winBoard = document.getElementById('win_board');
+
+
+function next(hide, show) {
+    hide.closest('.screen').classList.add('hidden');
+    document.getElementById(`${show}`).classList.remove('hidden');
+}
+
+
+
+
+
+// прозрачный фон 
+function toggleBackImage() {
+    document.querySelector('body').classList.toggle('bg_image')
+}
+
+
+
+//первый экран
+function showStartMenu() {
+    startMenu.classList.remove('hidden')
+}
+function hideStartMenu() {
+    startMenu.classList.add('hidden')
+}
+
+//инструкция
+let screenHiden; //с какого экрана вызван показ интсрукции(start_menu or game)
 function showInstruction(screen) {
     screenHiden = screen.closest('.screen');
     screenHiden.classList.add("hidden");
@@ -17,18 +44,26 @@ function hideInstruction() {
     instruction.classList.add("hidden");
 }
 
+//показ этапа игры
 
-function showStartGame() {
+function showStartGame(level) {
     startMenu.classList.add("hidden");
-    startGame.classList.remove("hidden");
+    document.getElementById(`start_game_${level}`).classList.remove("hidden");
 }
-
+function hideStartGame(level) {
+    document.getElementById(`start_game_${level}`).classList.add("hidden");
+}
+//игра 
 function showGame() {
     toggleBackImage();
-    startGame.classList.add("hidden");
     game.classList.remove('hidden')
 }
 
-function toggleBackImage() {
-    document.querySelector('body').classList.toggle('bg_image')
+
+// при прохождении уровня
+function showWinBoard() {
+    winBoard.classList.remove('hidden')
+}
+function HideWinBoard() {
+    winBoard.classList.add('hidden')
 }

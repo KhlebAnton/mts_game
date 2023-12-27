@@ -3,6 +3,11 @@
     src: url('fonts/MTSWide-Regular.ttf');
 }
 @font-face {
+    font-family: "MTS Wide";
+    src: url('fonts/MTSWide-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
     font-family: "MTS Text";
     src: url('fonts/MTSText-Regular.ttf');
 }
@@ -14,7 +19,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.418);
+    background-color: rgba(0, 0, 0, 0.205);
     font-family: "MTS Wide";
 }
 .main.hidden {
@@ -42,6 +47,7 @@ body.bg_image {
 }
 .game {
    height: auto;
+   z-index: 2;
 }
 .game.hidden {
     transform: translateY(-100%);
@@ -61,9 +67,39 @@ body.bg_image {
     transform: translateX(100%);
     transition: 1s;
 }
-#start_game.hidden {
+#start_game_1.hidden {
     transform: translateY(100%);
     transition: 1s;
+}
+#start_game_2.hidden {
+    transform: translateY(100%);
+    transition: 1s;
+}
+#start_game_3.hidden {
+    transform: translateY(100%);
+    transition: 1s;
+}
+#supergame.hidden {
+    transform: translateY(100%);
+    transition: 1s;
+}
+#supergame p {
+    color: #000;
+font-family: "MTS Text";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 110%;
+text-align: start;
+margin-bottom: 1em;
+}
+#supergame p span{
+    color: #000;
+    font-family:"MTS Wide";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 26.4px */
 }
 .wrapper {
     width: 87%;
@@ -83,8 +119,26 @@ h1.hello {
 .white_bg {
     border-radius: 22px;
     background-color: #FFF;
-    padding: 18px;
+    padding: 20px;
 
+}
+#supergame .white_bg.start_game {
+    height: 95%;
+    background-image: url('img/bg_supergame.png');
+    background-size: cover;
+    background-position-x: 60%;
+    background-position-y: 100px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.promocode::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url("img/promo.svg");
 }
 .welcome {
     height: 15%; 
@@ -183,6 +237,10 @@ h1.hello {
     font-weight: 400;
     line-height: normal;
 }
+.btn_go_info.prize {
+    border: 1px solid #FF0032;
+    color: #FF0032;
+}
 .btn_group{
     margin: 0 auto;
 }
@@ -219,7 +277,8 @@ h1.hello {
 }
 #instruction {
     overflow: auto;
-    height:100%
+    height:100%;
+    z-index: 3;
 }
 .white_bg.start_game {
     height: 80%;
@@ -239,4 +298,58 @@ font-style: normal;
 font-weight: 500;
 line-height: 110%; /* 26.4px */
 }
-
+.win_board {
+    transition: 1s;
+    min-height: 467px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - (90% / 2));
+    
+}
+.win_board h2 {
+    color: #000;
+text-align: center;
+font-family: "MTS Wide";
+font-size: 36px;
+font-style: normal;
+font-weight: 500;
+line-height: 110%; /* 39.6px */
+}
+#win_board_1.hidden {
+    transition: 1s;
+   transform: translateY(100%);
+}
+#win_board_2.hidden {
+    transition: 1s;
+   transform: translateY(100%);
+}
+#win_board_3.hidden {
+    transition: 1s;
+   transform: translateX(100%);
+}
+#win_supergame.hidden {
+    transition: 1s;
+   transform: translateX(100%);
+}
+#start_game_3 .white_bg.start_game {
+    background-image: url('img/bgstartgame3.png');
+}
+.white_bg.small h2 {
+    color: #000;
+font-family: "MTS Wide";
+font-size: 36px;
+font-style: normal;
+font-weight: 500;
+line-height: 110%; /* 39.6px */
+}
+.white_bg.big {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
