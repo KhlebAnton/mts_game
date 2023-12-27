@@ -11,15 +11,24 @@ const winBoard = document.getElementById('win_board');
 function next(hide, show) {
     hide.closest('.screen').classList.add('hidden');
     document.getElementById(`${show}`).classList.remove('hidden');
+    showBtnAnimation(show)
 }
 
 
 
-
+//анимация кнопки
+function showBtnAnimation(btn) {
+    if(document.getElementById(`${btn}`).querySelector('.btn_start_game.animated')) {
+        document.getElementById(`${btn}`).querySelector('.btn_start_game.animated').classList.add('go');
+        setTimeout(()=> {
+            document.getElementById(`${btn}`).querySelector('.btn_start_game.animated').classList.remove('go');
+        },4000)
+    }
+}
 
 // прозрачный фон 
 function toggleBackImage() {
-    document.querySelector('body').classList.toggle('bg_image')
+    document.querySelector('body').classList.toggle('bg_image');
 }
 
 
