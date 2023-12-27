@@ -13,7 +13,11 @@ function next(hide, show) {
     document.getElementById(`${show}`).classList.remove('hidden');
     showBtnAnimation(show)
 }
+document.body.style.height = window.innerHeight + 'px';
 
+window.addEventListener('resize', function() {
+  document.body.style.height = window.innerHeight + 'px';
+});
 
 
 //анимация кнопки
