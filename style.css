@@ -158,10 +158,10 @@ h1.hello {
     height: 55%;   
     min-height: 358px;
     color: #545454;
-    background-image: url('img/mask.png');
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/promo.png'), url("img/promo_liner.svg");
     background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-size: contain;
+    background-position: center ,50% 30px, 50% 80px;
+    background-size: cover ,cover, contain;
 
     font-family: "MTS Wide";
     font-size: 20px;
@@ -404,8 +404,10 @@ h1.hello {
 }
 .white_bg.start_game {
     height: 80%;
-    background-image: url('img/bg_start.png');
-    background-size: cover;
+    background-image:  linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%) ,url('img/bg_start.png');
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center 50px;
 
     display: flex;
     flex-direction: column;
@@ -470,7 +472,8 @@ font-weight: 500;
 line-height: 110%; /* 39.6px */
 }
 .white_bg.big {
-    height: 480px;
+    min-height: 400px;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
