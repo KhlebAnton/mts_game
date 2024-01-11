@@ -35,7 +35,7 @@
             <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu()"></div>
             <div class="btn_again" ontouchstart onclick="playVideo()"></div>
         </div>
-        <video src="video/video_v5.mp4" autoplay>
+        <video src="video/video_v5.mp4">
 
         </video>
     </div>
@@ -50,7 +50,7 @@
                 <p>Пройди игру и получи<br> промокод на ХХХ!</p>
                 <div class="btn_group">
                     <div onclick="next(this, 'start_game_1' )" class="btn_start_game" ontouchstart>Начачть игру</div>
-                    <div onclick="showVideo(this)" class="btn_go_info" ontouchstart>Как играть?</div>
+                    <div onclick="showVideo(this), playVideo()" class="btn_go_info" ontouchstart>Как играть?</div>
                 </div>
             </div>
         </div>
