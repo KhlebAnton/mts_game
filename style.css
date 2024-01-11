@@ -521,6 +521,21 @@ line-height: 110%; /* 39.6px */
     width: 225.592px;
     height: 91.714px;
 }
+.next_tap {
+    background: url('img/instr/Frame\ 31.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
+.cube_red {
+    background: url('img/instr/Frame\ 33.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
+.cube_manip {
+    background: url('img/instr/Frame\ 32.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
 #section_3 .cube_map{
     height: 150px;
 }
