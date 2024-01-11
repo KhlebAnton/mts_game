@@ -30,18 +30,27 @@
 </head>
 
 <body class="bg_image">
+    <div id="video" class="screen video hidden">
+        <div class="nav game">
+            <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu()"></div>
+            <div class="btn_again" ontouchstart onclick="playVideo()"></div>
+        </div>
+        <video src="video/video_v5.mp4" autoplay>
+
+        </video>
+    </div>
     <div id="start_menu" class="screen bg_image welcome_screen ">
         <div class="wrapper">
             <div class="nav">
                 <div onclick="showInstruction(this)" class="info_btn"></div>
             </div>
             <h1 class="hello">Привет!</h1>
-            <div class="white_bg welcome"> Добро пожаловать <br>в мир цифровой экосистемы МТС!</div>
+            <div class="white_bg welcome"> Добро пожаловать <br>в мир цифровой <br>экосистемы МТС!</div>
             <div class="white_bg promo">
-                <p>Пройди игру и получи промокод на ХХХ!</p>
+                <p>Пройди игру и получи<br> промокод на ХХХ!</p>
                 <div class="btn_group">
                     <div onclick="next(this, 'start_game_1' )" class="btn_start_game" ontouchstart>Начачть игру</div>
-                    <div onclick="showInstruction(this)" class="btn_go_info" ontouchstart>Как играть?</div>
+                    <div onclick="showVideo(this)" class="btn_go_info" ontouchstart>Как играть?</div>
                 </div>
             </div>
         </div>
@@ -54,69 +63,33 @@
             </div>
             <h2>Как играть</h2>
             <div class="inst_item">
-                <p>Вращай куб пальцами, чтобы решить головоломку и пройти дальше</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="212" height="96" viewBox="0 0 212 96" fill="none">
-                    <path
-                        d="M64.8954 15.8679L105.197 0.281629C105.665 0.100531 106.185 0.102175 106.652 0.286233L146.207 15.8726C147.905 16.5418 147.893 18.9494 146.188 19.6014L106.633 34.7293C106.177 34.9037 105.673 34.9053 105.216 34.7337L64.914 19.6057C63.1936 18.96 63.1815 16.5308 64.8954 15.8679Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M62.6903 20.9893L103.69 36.0668C104.477 36.3561 105 37.1055 105 37.9438V93.0597C105 94.4709 103.578 95.4383 102.265 94.9198L61.2653 78.7256C60.5017 78.424 60 77.6864 60 76.8654V22.8664C60 21.4754 61.3848 20.5092 62.6903 20.9893Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M149.31 20.9893L108.31 36.0668C107.523 36.3561 107 37.1055 107 37.9438V93.0597C107 94.4709 108.422 95.4383 109.735 94.9198L150.735 78.7256C151.498 78.424 152 77.6864 152 76.8654V22.8664C152 21.4754 150.615 20.5092 149.31 20.9893Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M40.3051 87.8051C41.1335 87.8051 41.8051 87.1335 41.8051 86.3051L41.8051 72.8051C41.8051 71.9767 41.1335 71.3051 40.3051 71.3051C39.4767 71.3051 38.8051 71.9767 38.8051 72.8051L38.8051 84.8051L26.8051 84.8051C25.9767 84.8051 25.3051 85.4767 25.3051 86.3051C25.3051 87.1335 25.9767 87.8051 26.8051 87.8051L40.3051 87.8051ZM41.3657 85.2444C19.6916 63.5703 19.6916 28.4297 41.3657 6.75557L39.2444 4.63425C16.3988 27.4799 16.3988 64.5201 39.2444 87.3657L41.3657 85.2444Z"
-                        fill="#FF0032" />
-                    <path
-                        d="M171.305 4.19491C170.477 4.19491 169.805 4.86649 169.805 5.69491L169.805 19.1949C169.805 20.0233 170.477 20.6949 171.305 20.6949C172.134 20.6949 172.805 20.0233 172.805 19.1949L172.805 7.19491L184.805 7.19491C185.634 7.19491 186.305 6.52334 186.305 5.69491C186.305 4.86649 185.634 4.19491 184.805 4.19492L171.305 4.19491ZM170.245 6.75557C191.919 28.4297 191.919 63.5703 170.245 85.2444L172.366 87.3657C195.212 64.5201 195.212 27.4799 172.366 4.63425L170.245 6.75557Z"
-                        fill="#FF0032" />
-                </svg>
+                <p>Вращай куб пальцами, <br>чтобы решить головоломку <br>и пройти дальше</p>
+                <div class="inst_item_img cube"></div>
             </div>
             <div class="inst_item">
-                <p>Чтобы передвинуть шар,
+                <p>Чтобы передвинуть шар,<br>
                     тапни по соседней клетке</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="166" height="80" viewBox="0 0 166 80" fill="none">
-                    <path
-                        d="M1.61268 31.8288L52.445 12.1698C53.0356 11.9414 53.6905 11.9435 54.2797 12.1756L104.171 31.8347C106.313 32.6787 106.298 35.7154 104.147 36.5378L54.2562 55.6186C53.681 55.8385 53.0452 55.8405 52.4686 55.6241L1.6361 36.5433C-0.53381 35.7287 -0.549029 32.6648 1.61268 31.8288Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M60.8939 55.7934L111.726 36.1344C112.317 35.906 112.972 35.9081 113.561 36.1402L163.452 55.7993C165.594 56.6433 165.579 59.68 163.428 60.5024L113.537 79.5832C112.962 79.8031 112.326 79.8051 111.75 79.5887L60.9173 60.5079C58.7474 59.6933 58.7322 56.6294 60.8939 55.7934Z"
-                        fill="#D2C9FE" />
-                    <circle cx="53" cy="17" r="17" fill="#7B91FD" />
-                </svg>
+                    <div class="inst_item_img next_tap"></div>
             </div>
             <div class="inst_item">
-                <p>Собирай иконки сервисов цифровой экосистемы МТС, чтобы пройти дальше</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="226" height="92" viewBox="0 0 226 92" fill="none">
-                    <path
-                        d="M1.61268 43.7934L52.445 24.1345C53.0356 23.9061 53.6905 23.9081 54.2797 24.1403L104.171 43.7993C106.313 44.6433 106.298 47.6801 104.147 48.5025L54.2562 67.5832C53.681 67.8032 53.0452 67.8052 52.4686 67.5887L1.6361 48.5079C-0.53381 47.6934 -0.549029 44.6295 1.61268 43.7934Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M60.8934 67.758L111.726 48.0991C112.316 47.8707 112.971 47.8727 113.56 48.1049L163.452 67.7639C165.594 68.6079 165.578 71.6447 163.428 72.4671L113.537 91.5478C112.962 91.7678 112.326 91.7698 111.749 91.5533L60.9169 72.4725C58.747 71.658 58.7317 68.5941 60.8934 67.758Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M121.436 43.7934L172.268 24.1345C172.859 23.9061 173.514 23.9081 174.103 24.1403L223.994 43.7993C226.136 44.6433 226.121 47.6801 223.97 48.5025L174.079 67.5832C173.504 67.8032 172.868 67.8052 172.292 67.5887L121.459 48.5079C119.289 47.6934 119.274 44.6295 121.436 43.7934Z"
-                        fill="#D2C9FE" />
-                    <path
-                        d="M60.8934 19.8288L111.726 0.169822C112.316 -0.058595 112.971 -0.0565222 113.56 0.17563L163.452 19.8347C165.594 20.6787 165.578 23.7154 163.428 24.5378L113.537 43.6186C112.962 43.8385 112.326 43.8405 111.749 43.6241L60.9169 24.5433C58.747 23.7287 58.7317 20.6648 60.8934 19.8288Z"
-                        fill="#D2C9FE" />
-                </svg>
+                <p>Собирай иконки сервисов<br>цифровой экосистемы МТС,<br> чтобы пройти дальше</p>
+                <div class="inst_item_img cube_map"></div>
             </div>
             <div class="inst_item">
-                <p>Соединяй стороны мостиков,
-                    чтобы попасть с одного куба на другой</p>
+                <p>Соединяй стороны мостиков,<br>
+                    чтобы попасть с одного куба<br> на другой</p>
+                <div class="inst_item_img cube_red"></div>
             </div>
             <div class="inst_item">
-                <p>Управляй пальцами, чтобы изменить масштаб</p>
-
+                <p>Управляй пальцами, чтобы <br>изменить масштаб</p>
+                <div class="inst_item_img cube_manip"></div>
             </div>
         </div>
     </div>
     <div id="start_game_1" class="screen start_game hidden">
         <div class="wrapper">
             <div class="white_bg start_game">
-                <p>Собери все иконки сервисов экосистемы МТС, чтобы перейти на следующий уровень</p>
+                <p>Собери все иконки <br>сервисов <br>экосистемы МТС,<br> чтобы перейти на <br>следующий уровень</p>
                 <div onclick="next(this, 'game'), toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
             </div>
         </div>
@@ -124,7 +97,7 @@
     <div id="start_game_2" class="screen start_game hidden">
         <div class="wrapper">
             <div class="white_bg start_game">
-                <p>Чтобы перейти на следующий уровень – нужно собрать все иконки сервисов экосистемы МТС
+                <p>Чтобы перейти <br>на следующий <br>уровень – нужно <br>собрать все иконки <br>сервисов <br>экосистемы МТС
                 </p>
                 <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
             </div>
@@ -133,7 +106,7 @@
     <div id="start_game_3" class="screen start_game hidden">
         <div class="wrapper">
             <div class="white_bg start_game">
-                <p>Вращай куб, чтобы увидеть иконки на задних гранях кубов
+                <p>Вращай куб, чтобы<br> увидеть иконки<br> на задних гранях<br> кубов
                 </p>
                 <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
             </div>
@@ -143,10 +116,10 @@
         <div class="wrapper">
             <div class="white_bg start_game">
                 <div>
-                    <p><span>Хочешь сыграть в суперигру? </span>
+                    <p><span>Хочешь сыграть<br> в суперигру? </span>
                 </p>
-                <p>Впереди - самый сложный уровень, но и приз того стоит: ХХХ</p>
-                <p>Не переживай, свой заслуженный приз - ты уже не потеряешь!</p>
+                <p>Впереди - самый сложный <br>уровень, но и приз того стоит: <br>ХХХ</p>
+                <p>Не переживай, свой <br>заслуженный приз - <br>ты уже не потеряешь!</p>
                 <p>Рискнешь?</p>
                 </div>
                 
@@ -198,10 +171,10 @@
     <div id="win_board_3" class="screen win_screen hidden">
         <div class="wrapper">
             <div class="white_bg small">
-                <h2>Ты прошел основную часть игры!</h2>
+                <h2>Ты прошел <br>основную <br>часть игры!</h2>
             </div>
             <div class="white_bg big">
-                <p>Поздравляем и дарим заслуженный приз</p>
+                <p>Поздравляем и дарим <br>заслуженный приз</p>
                 <div class="btn_group">
                     <div style="margin-bottom: 10px;" class="btn_go_info prize" ontouchstart>Забрать приз</div>
                     <div onclick="next(this, 'supergame' )" class="btn_start_game" ontouchstart>Сыграть в суперигру</div>
@@ -214,10 +187,10 @@
     <div id="win_supergame" class="screen win_screen hidden">
         <div class="wrapper">
             <div class="white_bg small">
-                <h2>Ты прошел суперигру!</h2>
+                <h2>Ты прошел<br> суперигру!</h2>
             </div>
             <div class="white_bg big">
-                <p>Поздравляем с прохождением всех уровней. Забери свой промокод ниже</p>
+                <p>Поздравляем с прохождением <br>всех уровней. Забери свой <br>промокод ниже</p>
                 <div class="btn_group">
                     <div style="margin-bottom: 10px;" class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
                     <div class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
@@ -240,6 +213,76 @@
             <button onclick="next(this, 'win_board_2')">win test 2level</button>
             <button onclick="next(this, 'win_board_3'),toggleBackImage()">win test 3level</button>
             <button onclick="next(this, 'win_supergame'),toggleBackImage()">win test suoergame</button>
+        </div>
+    </div>
+    <div id="section_1" class="screen game section hidden">
+        <div class="wrapper">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+            </div>
+            <div class="win_board white_bg instruction">
+                <p>
+                    Этот уровень сложнее!<br> Шар не может попасть на <br>красные клетки кубов
+                </p>
+                <div class="inst_item_img cube_map_play"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="section_2" class="screen game section hidden">
+        <div class="wrapper">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+            </div>
+            <div class="win_board white_bg instruction">
+                <p>
+                    Тут преграда!<br> Попробуй другой путь
+                </p>
+                <div class="inst_item_img section_img_2"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="section_3" class="screen game section hidden">
+        <div class="wrapper">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+            </div>
+            <div class="win_board white_bg instruction">
+                <p>
+                    Остались еще иконки <br>сервисов! Собери их,<br> чтобы попасть дальше
+                </p>
+                <div class="inst_item_img cube_map"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="section_4" class="screen game section hidden">
+        <div class="wrapper">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+            </div>
+            <div class="win_board white_bg instruction">
+                <p>
+                    Передвинь шар<br>на портал, чтобы<br> получить промокод<br> на ХХХ
+                </p>
+                <div class="inst_item_img section_img_4"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="section_5" class="screen game section hidden">
+        <div class="wrapper">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+            </div>
+            <div class="win_board white_bg instruction">
+                <p>
+                    Шар не может<br> двигаться по боковым граням куба, только<br>по верхней
+                </p>
+                <div class="inst_item_img section_img_5"></div>
+            </div>
+            
         </div>
     </div>
 

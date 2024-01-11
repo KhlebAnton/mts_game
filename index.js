@@ -80,3 +80,35 @@ function showWinBoard() {
 function HideWinBoard() {
     winBoard.classList.add('hidden')
 }
+
+/// sections
+function showSection1(){
+    document.getElementById('section_1').classList.remove('hidden')
+}
+function showSection2(){
+    document.getElementById('section_2').classList.remove('hidden')
+}
+function showSection3(){
+    document.getElementById('section_3').classList.remove('hidden')
+}
+function showSection4(){
+    document.getElementById('section_4').classList.remove('hidden')
+}
+function showSection5(){
+    document.getElementById('section_5').classList.remove('hidden')
+}
+function closeSection(section){
+    section.closest('.screen').classList.add('hidden')
+}
+
+const video = document.querySelector('video');
+function playVideo() {
+    video.currentTime = 0;
+    video.play();
+}
+
+function showVideo(elem) {
+    elem.closest('.screen').classList.add('hidden')
+    document.getElementById('video').classList.remove("hidden");
+
+}

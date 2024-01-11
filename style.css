@@ -388,7 +388,6 @@ h1.hello {
     justify-content: space-evenly;
 }
 .inst_item p {
-    width: 70%;
     color: #000;
     text-align: center;
     font-family: MTS Text;
@@ -485,4 +484,95 @@ line-height: 110%; /* 39.6px */
     font-style: normal;
     font-weight: 400;
     line-height: 110%; /* 22px */
+}
+.btn_back {
+    transition: 0.2s;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.38) url('img/btn_back.svg') 50%  no-repeat ;
+}
+.btn_back:active {
+    background: rgba(255, 255, 255, 0.253) url('img/btn_back.svg') 50%  no-repeat ;
+}
+.win_board.white_bg.instruction {
+   min-height: 266px; 
+   /* justify-content: space-evenly; */
+   color: #000;
+
+    text-align: center;
+    font-family: "MTS Wide";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 20px */
+}
+.screen.game.section{
+    height: 100%;
+}
+
+.cube {
+    background: url('img/instr/Frame\ 20.png') 50% / contain no-repeat;
+    width: 211.61px;
+    height: 96px;
+}
+.cube_map {
+    background: url('img/instr/Frame\ 17.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
+#section_3 .cube_map{
+    height: 150px;
+}
+.cube_map_play {
+    background: url('img/instr/Frame\ 15.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 150.714px;
+}
+.section_img_2 {
+    background: url('img/instr/Frame\ 16.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 150.714px;  
+}
+.section_img_4 {
+    background: url('img/instr/Frame\ 18.png') 50% / contain no-repeat;
+    width: 225.05px;
+    height: 150.75px; 
+}
+.section_img_5 {
+    background: url('img/instr/Frame\ 19.png') 50% / contain no-repeat;
+    width: 148.133px;
+    height: 125.75px; 
+}
+.screen.video {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.screen.video.hidden {
+    transform: translateX(100%);
+    
+} 
+video {
+    max-height: 80%;
+    
+    object-fit: contain;
+    border: 10px solid #E6E6E6;
+    border-radius: 25px 25px 0 0 ; 
+      
+}
+.screen.video .nav {
+    padding-top: 48px; 
+    width: 85%;
+}
+.btn_again {
+    width: 48px;
+    height: 48px;
+    background:  url('img/replay.svg') 50% / 100%  no-repeat ;
+}
+.screen.video .btn_back {
+    border-radius: 50%;
 }
