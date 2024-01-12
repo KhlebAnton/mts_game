@@ -130,7 +130,7 @@ h1.hello {
     background-image: url('img/bg_supergame.png');
     background-size: cover;
     background-position-x: 60%;
-    background-position-y: 100px;
+    background-position-y: 150px;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -213,7 +213,8 @@ h1.hello {
     border-radius: 90px;
     background: #FF0032;
     display: flex;
-    width: 295px;
+    width: 100%;
+    
     padding: 24px 45px;
     justify-content: center;
     align-items: center;
@@ -333,7 +334,6 @@ h1.hello {
 .btn_go_info {
     margin-top: 10px;
     display: flex;
-    width: 295px;
     padding: 24px 45px;
     justify-content: center;
     align-items: center;
@@ -365,6 +365,7 @@ h1.hello {
 }
 .btn_group{
     margin: 0 auto;
+    width: 100%;
 }
 #instruction h2 {
     color: #FFF;
