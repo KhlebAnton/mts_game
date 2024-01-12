@@ -214,7 +214,7 @@ h1.hello {
     display: flex;
     width: 100%;
     
-    padding: 24px 45px;
+    padding: 24px 0;
     justify-content: center;
     align-items: center;
 
@@ -333,7 +333,7 @@ h1.hello {
 .btn_go_info {
     margin-top: 10px;
     display: flex;
-    padding: 24px 45px;
+    padding: 24px 0;
     justify-content: center;
     align-items: center;
     gap: 10px;
