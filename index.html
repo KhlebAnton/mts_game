@@ -30,259 +30,281 @@
 </head>
 
 <body class="bg_image">
-    <div id="video" class="screen video hidden">
-        <div class="nav game">
-            <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu()"></div>
-            <div class="btn_again" ontouchstart onclick="playVideo()"></div>
-        </div>
-        <video src="video/video_v5.mp4">
-
-        </video>
-    </div>
-    <div id="start_menu" class="screen bg_image welcome_screen">
-        <div class="wrapper">
-            <div class="nav">
-                <div onclick="showInstruction(this)" class="info_btn"></div>
+    <div class="screen landscape">
+        <div class="screen loadPage"> 
+            <div class="load">
+                <h1>Упс!</h1>
+                <p>Приложение работает только вертикально. <br>Пожалуйста, поверните экран.</p>
             </div>
-            <h1 class="hello">Привет!</h1>
-            <div class="white_bg welcome"> Добро пожаловать <br>в мир цифровой <br>экосистемы МТС!</div>
-            <div class="white_bg promo">
-                <p>Пройди игру и получи<br> промокод на ХХХ!</p>
-                <div class="btn_group">
-                    <div onclick="next(this, 'start_game_1' )" class="btn_start_game" ontouchstart>Начачть игру</div>
-                    <div onclick="showVideo(this), playVideo()" class="btn_go_info" ontouchstart>Как играть?</div>
+        </div>
+    </div>
+    <div class="screen desktop">
+        <div class="screen loadPage"> 
+            <div class="load">
+                <h1>Приложение работает<br> только
+                    на мобильных<br> устройствах</h1>
+                <p>Берите в руки свой девайс и начнем!</p>
+            </div>
+        </div>
+    </div>
+    <div class="portrait">
+
+        
+        <div id="video" class="screen video hidden">
+            <div class="nav game">
+                <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu()"></div>
+                <div class="btn_again" ontouchstart onclick="playVideo()"></div>
+            </div>
+            <video src="video/video_v5.mp4">
+
+            </video>
+        </div>
+        <div id="start_menu" class="screen bg_image welcome_screen">
+            <div class="wrapper">
+                <div class="nav">
+                    <div onclick="showInstruction(this)" class="info_btn"></div>
+                </div>
+                <h1 class="hello">Привет!</h1>
+                <div class="white_bg welcome"> Добро пожаловать <br>в мир цифровой <br>экосистемы МТС!</div>
+                <div class="white_bg promo">
+                    <p>Пройди игру и получи<br> промокод на ХХХ!</p>
+                    <div class="btn_group">
+                        <div onclick="next(this, 'start_game_1' )" class="btn_start_game" ontouchstart>Начать игру</div>
+                        <div onclick="showVideo(this), playVideo()" class="btn_go_info" ontouchstart>Как играть?</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="instruction" class="screen bg_image instruction_screen hidden">
+        <div id="instruction" class="screen bg_image instruction_screen hidden">
 
-        <div class="wrapper">
-            <div class="nav">
-                <div onclick="hideInstruction()" class="info_btn close"></div>
-            </div>
-            <h2>Как играть</h2>
-            <div class="inst_item">
-                <p>Вращай куб пальцами, <br>чтобы решить головоломку <br>и пройти дальше</p>
-                <div class="inst_item_img cube"></div>
-            </div>
-            <div class="inst_item">
-                <p>Чтобы передвинуть шар,<br>
-                    тапни по соседней клетке</p>
-                    <div class="inst_item_img next_tap"></div>
-            </div>
-            <div class="inst_item">
-                <p>Собирай иконки сервисов<br>цифровой экосистемы МТС,<br> чтобы пройти дальше</p>
-                <div class="inst_item_img cube_map"></div>
-            </div>
-            <div class="inst_item">
-                <p>Соединяй стороны мостиков,<br>
-                    чтобы попасть с одного куба<br> на другой</p>
-                <div class="inst_item_img cube_red"></div>
-            </div>
-            <div class="inst_item">
-                <p>Управляй пальцами, чтобы <br>изменить масштаб</p>
-                <div class="inst_item_img cube_manip"></div>
-            </div>
-        </div>
-    </div>
-    <div id="start_game_1" class="screen start_game hidden">
-        <div class="wrapper">
-            <div class="white_bg start_game">
-                <p>Собери все иконки <br>сервисов <br>экосистемы МТС,<br> чтобы перейти на <br>следующий уровень</p>
-                <div onclick="next(this, 'game'), toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
+            <div class="wrapper">
+                <div class="nav">
+                    <div onclick="hideInstruction()" class="info_btn close"></div>
+                </div>
+                <h2>Как играть</h2>
+                <div class="inst_item">
+                    <p>Вращай куб пальцами, <br>чтобы решить головоломку <br>и пройти дальше</p>
+                    <div class="inst_item_img cube"></div>
+                </div>
+                <div class="inst_item">
+                    <p>Чтобы передвинуть шар,<br>
+                        тапни по соседней клетке</p>
+                        <div class="inst_item_img next_tap"></div>
+                </div>
+                <div class="inst_item">
+                    <p>Собирай иконки сервисов<br>цифровой экосистемы МТС,<br> чтобы пройти дальше</p>
+                    <div class="inst_item_img cube_map"></div>
+                </div>
+                <div class="inst_item">
+                    <p>Соединяй стороны мостиков,<br>
+                        чтобы попасть с одного куба<br> на другой</p>
+                    <div class="inst_item_img cube_red"></div>
+                </div>
+                <div class="inst_item">
+                    <p>Управляй пальцами, чтобы <br>изменить масштаб</p>
+                    <div class="inst_item_img cube_manip"></div>
+                </div>
+                <div class="hidden_block" style="width: 100%; height: 40px;"></div>
             </div>
         </div>
-    </div>
-    <div id="start_game_2" class="screen start_game hidden">
-        <div class="wrapper">
-            <div class="white_bg start_game">
-                <p>Чтобы перейти <br>на следующий <br>уровень – нужно <br>собрать все иконки <br>сервисов <br>экосистемы МТС
-                </p>
-                <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
+        <div id="start_game_1" class="screen start_game hidden">
+            <div class="wrapper">
+                <div class="white_bg start_game">
+                    <p>Собери все иконки <br>сервисов <br>экосистемы МТС,<br> чтобы перейти на <br>следующий уровень</p>
+                    <div onclick="next(this, 'game'), toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="start_game_3" class="screen start_game hidden">
-        <div class="wrapper">
-            <div class="white_bg start_game">
-                <p>Вращай куб, чтобы<br> увидеть иконки<br> на задних гранях<br> кубов
-                </p>
-                <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начачть игру</div>
+        <div id="start_game_2" class="screen start_game hidden">
+            <div class="wrapper">
+                <div class="white_bg start_game">
+                    <p>Чтобы перейти <br>на следующий <br>уровень – нужно <br>собрать все иконки <br>сервисов <br>экосистемы МТС
+                    </p>
+                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="supergame" class="screen start_game hidden">
-        <div class="wrapper">
-            <div class="white_bg start_game">
-                <div>
-                    <p><span>Хочешь сыграть<br> в суперигру? </span>
-                </p>
-                <p>Впереди - самый сложный <br>уровень, но и приз того стоит: <br>ХХХ</p>
-                <p>Не переживай, свой <br>заслуженный приз - <br>ты уже не потеряешь!</p>
-                <p>Рискнешь?</p>
+        <div id="start_game_3" class="screen start_game hidden">
+            <div class="wrapper">
+                <div class="white_bg start_game">
+                    <p>Вращай куб, чтобы<br> увидеть иконки<br> на задних гранях<br> кубов
+                    </p>
+                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                </div>
+            </div>
+        </div>
+        <div id="supergame" class="screen start_game hidden">
+            <div class="wrapper">
+                <div class="white_bg start_game">
+                    <div>
+                        <p><span>Хочешь сыграть<br> в суперигру? </span>
+                    </p>
+                    <p>Впереди - самый сложный <br>уровень, но и приз того стоит: <br>ХХХ</p>
+                    <p>Не переживай, свой <br>заслуженный приз - <br>ты уже не потеряешь!</p>
+                    <p>Рискнешь?</p>
+                    </div>
+                    
+
+                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Суперигра</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="win_board_1" class="screen win_screen hidden">
+            <div class="wrapper">
+                <div class="win_board white_bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
+                        <rect x="1.5" y="1.5" width="141" height="141" rx="31.5" stroke="#FF0032" stroke-width="3" />
+                        <path d="M48 70.8095L64.3103 86.3432C64.6966 86.711 65.3034 86.711 65.6897 86.3432L96.5 57"
+                            stroke="#FF0032" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    <h2>УРОВЕНЬ
+                        ПРОЙДЕН!</h2>
+                    <div class="btn_group">
+                        <div onclick="next(this, 'start_game_2'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                        <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="win_board_2" class="screen win_screen hidden">
+            <div class="wrapper">
+                <div class="win_board white_bg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
+                        <rect x="1.5" y="1.5" width="141" height="141" rx="31.5" stroke="#FF0032" stroke-width="3" />
+                        <path d="M48 70.8095L64.3103 86.3432C64.6966 86.711 65.3034 86.711 65.6897 86.3432L96.5 57"
+                            stroke="#FF0032" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    <h2>УРОВЕНЬ
+                        ПРОЙДЕН!</h2>
+                    <div class="btn_group">
+                        <div onclick="next(this, 'start_game_3'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                        <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="win_board_3" class="screen win_screen hidden">
+            <div class="wrapper">
+                <div class="white_bg small">
+                    <h2>Ты прошел <br>основную <br>часть игры!</h2>
+                </div>
+                <div class="white_bg big">
+                    <p>Поздравляем и дарим <br>заслуженный приз</p>
+                    <div class="btn_group">
+                        <div style="margin-bottom: 10px;" class="btn_go_info prize" ontouchstart>Забрать приз</div>
+                        <div onclick="next(this, 'supergame' )" class="btn_start_game" ontouchstart>Сыграть в суперигру</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="win_supergame" class="screen win_screen hidden">
+            <div class="wrapper">
+                <div class="white_bg small">
+                    <h2>Ты прошел<br> суперигру!</h2>
+                </div>
+                <div class="white_bg big">
+                    <p>Поздравляем с прохождением <br>всех уровней. Забери свой <br>промокод ниже</p>
+                    <div class="btn_group">
+                        <div style="margin-bottom: 10px;" class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
+                        <div class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+        <div id="game" class="screen game hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="info_btn again"></div>
+                    <div onclick="showInstruction(this)" class="info_btn"></div>
+                </div>
+                <button onclick="next(this, 'win_board_1')">win test 1level</button>
+                <button onclick="next(this, 'win_board_2')">win test 2level</button>
+                <button onclick="next(this, 'win_board_3'),toggleBackImage()">win test 3level</button>
+                <button onclick="next(this, 'win_supergame'),toggleBackImage()">win test suoergame</button>
+            </div>
+        </div>
+        <div id="section_1" class="screen game section hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+                </div>
+                <div class="win_board white_bg instruction">
+                    <p>
+                        Этот уровень сложнее!<br> Шар не может попасть на <br>красные клетки кубов
+                    </p>
+                    <div class="inst_item_img cube_map_play"></div>
                 </div>
                 
-
-                <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Суперигра</div>
             </div>
         </div>
-    </div>
-
-
-    <div id="win_board_1" class="screen win_screen hidden">
-        <div class="wrapper">
-            <div class="win_board white_bg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
-                    <rect x="1.5" y="1.5" width="141" height="141" rx="31.5" stroke="#FF0032" stroke-width="3" />
-                    <path d="M48 70.8095L64.3103 86.3432C64.6966 86.711 65.3034 86.711 65.6897 86.3432L96.5 57"
-                        stroke="#FF0032" stroke-width="3" stroke-linecap="round" />
-                </svg>
-                <h2>УРОВЕНЬ
-                    ПРОЙДЕН!</h2>
-                <div class="btn_group">
-                    <div onclick="next(this, 'start_game_2'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
-                    <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+        <div id="section_2" class="screen game section hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
                 </div>
-
-            </div>
-        </div>
-
-    </div>
-    <div id="win_board_2" class="screen win_screen hidden">
-        <div class="wrapper">
-            <div class="win_board white_bg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
-                    <rect x="1.5" y="1.5" width="141" height="141" rx="31.5" stroke="#FF0032" stroke-width="3" />
-                    <path d="M48 70.8095L64.3103 86.3432C64.6966 86.711 65.3034 86.711 65.6897 86.3432L96.5 57"
-                        stroke="#FF0032" stroke-width="3" stroke-linecap="round" />
-                </svg>
-                <h2>УРОВЕНЬ
-                    ПРОЙДЕН!</h2>
-                <div class="btn_group">
-                    <div onclick="next(this, 'start_game_3'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
-                    <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+                <div class="win_board white_bg instruction">
+                    <p>
+                        Тут преграда!<br> Попробуй другой путь
+                    </p>
+                    <div class="inst_item_img section_img_2"></div>
                 </div>
-
+                
             </div>
         </div>
-
-    </div>
-    <div id="win_board_3" class="screen win_screen hidden">
-        <div class="wrapper">
-            <div class="white_bg small">
-                <h2>Ты прошел <br>основную <br>часть игры!</h2>
-            </div>
-            <div class="white_bg big">
-                <p>Поздравляем и дарим <br>заслуженный приз</p>
-                <div class="btn_group">
-                    <div style="margin-bottom: 10px;" class="btn_go_info prize" ontouchstart>Забрать приз</div>
-                    <div onclick="next(this, 'supergame' )" class="btn_start_game" ontouchstart>Сыграть в суперигру</div>
+        <div id="section_3" class="screen game section hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
                 </div>
-
-            </div>
-        </div>
-
-    </div>
-    <div id="win_supergame" class="screen win_screen hidden">
-        <div class="wrapper">
-            <div class="white_bg small">
-                <h2>Ты прошел<br> суперигру!</h2>
-            </div>
-            <div class="white_bg big">
-                <p>Поздравляем с прохождением <br>всех уровней. Забери свой <br>промокод ниже</p>
-                <div class="btn_group">
-                    <div style="margin-bottom: 10px;" class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
-                    <div class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
+                <div class="win_board white_bg instruction">
+                    <p>
+                        Остались еще иконки <br>сервисов! Собери их,<br> чтобы попасть дальше
+                    </p>
+                    <div class="inst_item_img cube_map"></div>
                 </div>
-
+                
             </div>
         </div>
-
-    </div>
-    
-    
-    
-    <div id="game" class="screen game hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="info_btn again"></div>
-                <div onclick="showInstruction(this)" class="info_btn"></div>
+        <div id="section_4" class="screen game section hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+                </div>
+                <div class="win_board white_bg instruction">
+                    <p>
+                        Передвинь шар<br>на портал, чтобы<br> получить промокод<br> на ХХХ
+                    </p>
+                    <div class="inst_item_img section_img_4"></div>
+                </div>
+                
             </div>
-            <button onclick="next(this, 'win_board_1')">win test 1level</button>
-            <button onclick="next(this, 'win_board_2')">win test 2level</button>
-            <button onclick="next(this, 'win_board_3'),toggleBackImage()">win test 3level</button>
-            <button onclick="next(this, 'win_supergame'),toggleBackImage()">win test suoergame</button>
         </div>
-    </div>
-    <div id="section_1" class="screen game section hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+        <div id="section_5" class="screen game section hidden">
+            <div class="wrapper">
+                <div class="nav game">
+                    <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
+                </div>
+                <div class="win_board white_bg instruction">
+                    <p>
+                        Шар не может<br> двигаться по боковым граням куба, только<br>по верхней
+                    </p>
+                    <div class="inst_item_img section_img_5"></div>
+                </div>
+                
             </div>
-            <div class="win_board white_bg instruction">
-                <p>
-                    Этот уровень сложнее!<br> Шар не может попасть на <br>красные клетки кубов
-                </p>
-                <div class="inst_item_img cube_map_play"></div>
-            </div>
-            
-        </div>
-    </div>
-    <div id="section_2" class="screen game section hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
-            </div>
-            <div class="win_board white_bg instruction">
-                <p>
-                    Тут преграда!<br> Попробуй другой путь
-                </p>
-                <div class="inst_item_img section_img_2"></div>
-            </div>
-            
-        </div>
-    </div>
-    <div id="section_3" class="screen game section hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
-            </div>
-            <div class="win_board white_bg instruction">
-                <p>
-                    Остались еще иконки <br>сервисов! Собери их,<br> чтобы попасть дальше
-                </p>
-                <div class="inst_item_img cube_map"></div>
-            </div>
-            
-        </div>
-    </div>
-    <div id="section_4" class="screen game section hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
-            </div>
-            <div class="win_board white_bg instruction">
-                <p>
-                    Передвинь шар<br>на портал, чтобы<br> получить промокод<br> на ХХХ
-                </p>
-                <div class="inst_item_img section_img_4"></div>
-            </div>
-            
-        </div>
-    </div>
-    <div id="section_5" class="screen game section hidden">
-        <div class="wrapper">
-            <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this)"></div>
-            </div>
-            <div class="win_board white_bg instruction">
-                <p>
-                    Шар не может<br> двигаться по боковым граням куба, только<br>по верхней
-                </p>
-                <div class="inst_item_img section_img_5"></div>
-            </div>
-            
         </div>
     </div>
 

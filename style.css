@@ -572,11 +572,11 @@ line-height: 110%; /* 39.6px */
     
 } 
 video {
-    max-height: 80%;
-    
+    max-height: 75%;
+    margin-bottom: 40px;
     object-fit: contain;
     border: 10px solid #E6E6E6;
-    border-radius: 25px 25px 0 0 ; 
+    border-radius: 25px; 
       
 }
 .screen.video .nav {
@@ -590,4 +590,112 @@ video {
 }
 .screen.video .btn_back {
     border-radius: 50%;
+}
+.landscape {
+    display: none;
+}
+.desktop {
+    display: none;
+}
+
+
+@media screen and (min-device-width: 768px) {
+    .portrait {
+        display: none;
+    }
+    .landscape {
+        display: none;
+    }
+    .desktop {
+        display: block;
+        background: url('img/bg_lands.png') 50% / cover no-repeat;
+    }
+    .desktop .load {
+        min-height:50%;
+        text-align: start;
+        padding-left: 30px;
+    }
+    .desktop .load h1 {
+        margin-top: 20px;
+        color: #FFF;
+    font-family:"MTS Wide";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 64px */
+    }
+    .desktop .load p {
+        margin-left: 0;
+        margin-top: 26px;
+        color: #FFF;
+    font-family: "MTS Text";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 18px */
+    }
+}
+
+@media screen  and (orientation: landscape ) {
+    .portrait {
+        display: none;
+    }
+    
+    .landscape {
+        display: block; 
+        background: url('img/bg_lands.png') 50% / cover no-repeat;
+    }
+    
+    .landscape .load {
+        min-height:50%;
+        text-align: start;
+        width: 90%;
+        margin-left: 30px;
+    }
+    .landscape .load h1 {
+        margin-top: 20px;
+        color: #FFF;
+        font-family: "MTS Wide";
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .landscape .load p {
+        margin-left: 0;
+        color: #FFF;
+        font-family: "MTS Text";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; /* 18px */
+    }
+    .desktop {
+        display: none;
+    }
+}
+@media screen and (min-width: 1020px) {
+    .portrait {
+        display: none;
+    }
+    .landscape {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    .desktop .load {
+        min-height:50%;
+        text-align: start;
+        padding-left: 30px;
+    }
+    .desktop .load h1 {
+        margin-top: 20px;
+    }
+    .desktop .load p {
+        margin-left: 0;
+    }
+    .landscape .loadPage {
+        background: url("img/picLandscpae.png") 100% 0% / 100% 100% no-repeat;
+    }
 }
