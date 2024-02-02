@@ -69,7 +69,7 @@
                 <div class="white_bg promo">
                     <p>Пройди игру и получи<br> промокод на ХХХ!</p>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_1' )" class="btn_start_game" ontouchstart>Начать игру</div>
+                        <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game" ontouchstart>Начать игру</div>
                         <div onclick="showVideo(this), playVideo()" class="btn_go_info" ontouchstart>Как играть?</div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
             <div class="wrapper">
                 <div class="white_bg start_game">
                     <p>Собери все иконки <br>сервисов <br>экосистемы МТС,<br> чтобы перейти на <br>следующий уровень</p>
-                    <div onclick="next(this, 'game'), toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                    <div onclick="next(this, 'game'); toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                 <div class="white_bg start_game">
                     <p>Чтобы перейти <br>на следующий <br>уровень – нужно <br>собрать все иконки <br>сервисов <br>экосистемы МТС
                     </p>
-                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                    <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
                 <div class="white_bg start_game">
                     <p>Вращай куб, чтобы<br> увидеть иконки<br> на задних гранях<br> кубов
                     </p>
-                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
+                    <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>Начать игру</div>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                     </div>
                     
 
-                    <div onclick="next(this, 'game'),toggleBackImage()" class="btn_start_game animated" ontouchstart>Суперигра</div>
+                    <div onclick="next(this, 'game');toggleBackImage(); setTimeout(function(){ showSection1() },1000) " class="btn_start_game animated" ontouchstart>Суперигра</div>
                 </div>
             </div>
         </div>
@@ -162,8 +162,8 @@
                     <h2>УРОВЕНЬ
                         ПРОЙДЕН!</h2>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_2'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
-                        <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+                        <div onclick="next(this, 'start_game_2');toggleBackImage(); startGame(1)" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                        <div onclick="next(this, 'start_game_1' ); startGame(0); toggleBackImage(); wins--;" class="btn_go_info" ontouchstart>Начать уровень заново</div>
                     </div>
 
                 </div>
@@ -181,8 +181,8 @@
                     <h2>УРОВЕНЬ
                         ПРОЙДЕН!</h2>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_3'),toggleBackImage()" class="btn_start_game" ontouchstart>К следующему уровню</div>
-                        <div class="btn_go_info" ontouchstart>Начать уровень заново</div>
+                        <div onclick="next(this, 'start_game_3');toggleBackImage(); startGame(2)" class="btn_start_game" ontouchstart>К следующему уровню</div>
+                        <div onclick="next(this, 'start_game_2' ); startGame(1); toggleBackImage(); wins--;" class="btn_go_info" ontouchstart>Начать уровень заново</div>
                     </div>
 
                 </div>
@@ -198,7 +198,7 @@
                     <p>Поздравляем и дарим <br>заслуженный приз</p>
                     <div class="btn_group">
                         <div style="margin-bottom: 10px;" class="btn_go_info prize" ontouchstart>Забрать приз</div>
-                        <div onclick="next(this, 'supergame' )" class="btn_start_game" ontouchstart>Сыграть в суперигру</div>
+                        <div onclick="next(this, 'supergame' ); toggleBackImage(); startGame(3)" class="btn_start_game" ontouchstart>Сыграть в суперигру</div>
                     </div>
 
                 </div>
@@ -214,7 +214,7 @@
                     <p>Поздравляем с прохождением <br>всех уровней. Забери свой <br>промокод ниже</p>
                     <div class="btn_group">
                         <div style="margin-bottom: 10px;" class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
-                        <div class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
+                        <div onclick="next(this, 'start_game_1' ); startGame(0); toggleBackImage(); wins=0;" class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
                     </div>
 
                 </div>
@@ -227,13 +227,13 @@
         <div id="game" class="screen game hidden">
             <div class="wrapper">
                 <div class="nav game">
-                    <div class="info_btn again"></div>
+                    <div class="info_btn again" onclick="  startGame(wins);"></div>
                     <div onclick="showInstruction(this)" class="info_btn"></div>
                 </div>
-                <button onclick="next(this, 'win_board_1')">win test 1level</button>
+                <!--<button onclick="next(this, 'win_board_1')">win test 1level</button>
                 <button onclick="next(this, 'win_board_2')">win test 2level</button>
                 <button onclick="next(this, 'win_board_3'),toggleBackImage()">win test 3level</button>
-                <button onclick="next(this, 'win_supergame'),toggleBackImage()">win test suoergame</button>
+                <button onclick="next(this, 'win_supergame'),toggleBackImage()">win test suoergame</button>-->
             </div>
         </div>
         <div id="section_1" class="screen game section hidden">

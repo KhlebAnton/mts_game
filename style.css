@@ -26,7 +26,7 @@ body {
 }
 .main.hidden {
     transform: translateY(100%);
-    transition: 1s;
+    transition: 0.3s;
     background: #ffffff00;
 }
 .screen {
@@ -34,7 +34,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    transition: 1s;
+    transition: 0.3s;
 }
 body.bg_image {
     background: url('img/bg.png') 50% / cover no-repeat;
@@ -46,7 +46,7 @@ body.bg_image {
     width: 100%;
     padding-top: 48px ;
     height: 100%;
-    
+
 }
 .game {
    height: auto;
@@ -59,32 +59,32 @@ body.bg_image {
 .screen.hidden {
     visibility: hidden;
     touch-action: none;
-    
+
 
 }
 #start_menu.hidden {
     transform: translateX(-100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #instruction.hidden {
     transform: translateX(100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #start_game_1.hidden {
     transform: translateY(100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #start_game_2.hidden {
     transform: translateY(100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #start_game_3.hidden {
     transform: translateY(100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #supergame.hidden {
     transform: translateY(100%);
-    transition: 1s;
+    transition: 0.3s;
 }
 #supergame p {
     color: #000;
@@ -144,7 +144,7 @@ h1.hello {
     background: url("img/promo.svg");
 }
 .welcome {
-    height: 20%; 
+    height: 20%;
     max-height: 115px;
     color: #000;
 
@@ -155,7 +155,7 @@ h1.hello {
     line-height: 110%; /* 26.4px */
 }
 .promo {
-    height: 60%;   
+    height: 60%;
     color: #545454;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/promo.png'), url("img/promo_liner.svg");
     background-repeat: no-repeat;
@@ -185,13 +185,13 @@ h1.hello {
     transition: 0.2s;
     width: 32px;
     height: 32px;
-    background: url("img/info.svg"); 
+    background: url("img/info.svg");
 }
 .info_btn.again {
     transition: 0.2s;
     width: 32px;
     height: 32px;
-    background: url("img/replay.svg"); 
+    background: url("img/replay.svg");
 }
 .nav.hidden {
     transition: 0.2s;
@@ -199,7 +199,7 @@ h1.hello {
     height: 0;
 }
 .info_btn.close {
-    background: url("img/close.svg"); 
+    background: url("img/close.svg");
     transition: 0.2s;
 }
 .btn_start_game:active {
@@ -213,7 +213,7 @@ h1.hello {
     background: #FF0032;
     display: flex;
     width: 100%;
-    
+
     padding: 24px 0;
     justify-content: center;
     align-items: center;
@@ -226,10 +226,14 @@ h1.hello {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
+
 }
 .btn_start_game.animated.go {
-    animation: load 2s;
+    //animation: load 2s;
+    border: 1px solid #E6E6E6;
+    background: #FFF;
+    color: #ffffff00;
+    z-index: 0;
 }
 .btn_start_game.animated.go::after {
     content: '';
@@ -239,15 +243,16 @@ h1.hello {
     height: 100%;
     z-index: -1;
     background: #FF0032;
-    animation: loadProgress 1.5s;
+    //animation: loadProgress 1.5s;
     border-radius: 90px;
     border: 1px solid #E6E6E6;
-    transition: 1s;
-    
+    transition: 0.3s;
+    width:15%;
+
 
 }
 @keyframes loadProgress {
-   
+
     5%{
         width: 5%;
     }
@@ -323,7 +328,7 @@ h1.hello {
         z-index: 0;
         transform: scale(0.9 , 0.9);
     }
- 
+
     100%{
         background: #FF0032;
     }
@@ -422,7 +427,7 @@ font-weight: 500;
 line-height: 110%; /* 26.4px */
 }
 .win_board {
-    transition: 1s;
+    transition: 0.3s;
     min-height: 467px;
     width: 90%;
     display: flex;
@@ -432,7 +437,7 @@ line-height: 110%; /* 26.4px */
     position: fixed;
     bottom: 20px;
     left: calc(50% - (90% / 2));
-    
+
 }
 .win_board h2 {
     color: #000;
@@ -444,19 +449,19 @@ font-weight: 500;
 line-height: 110%; /* 39.6px */
 }
 #win_board_1.hidden {
-    transition: 1s;
+    transition: 0.3s;
    transform: translateY(100%);
 }
 #win_board_2.hidden {
-    transition: 1s;
+    transition: 0.3s;
    transform: translateY(100%);
 }
 #win_board_3.hidden {
-    transition: 1s;
+    transition: 0.3s;
    transform: translateX(100%);
 }
 #win_supergame.hidden {
-    transition: 1s;
+    transition: 0.3s;
    transform: translateX(100%);
 }
 #start_game_3 .white_bg.start_game {
@@ -486,6 +491,7 @@ line-height: 110%; /* 39.6px */
     line-height: 110%; /* 22px */
 }
 .btn_back {
+    margin-top: 44px;
     transition: 0.2s;
     width: 48px;
     height: 48px;
