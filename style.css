@@ -415,7 +415,7 @@ h1.hello {
     align-items: center;
 
     position: fixed;
-    bottom: 30px;
+    top: calc(50% - 300px);
     width: 87%;
 }
 .white_bg.start_game{
