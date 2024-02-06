@@ -465,8 +465,9 @@ line-height: 110%; /* 39.6px */
    transform: translateX(100%);
 }
 #start_game_3 .white_bg.start_game {
-    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/bgstartgame3.png');
+    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/gg413683a3a0.gif');
     background-position: center, top;
+    background-size: cover;
 }
 .white_bg.small h2 {
     color: #000;
