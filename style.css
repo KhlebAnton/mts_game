@@ -420,7 +420,7 @@ h1.hello {
     align-items: center;
 
     position: fixed;
-    bottom: 30px;
+    top: calc(50% - 300px);
     width: 87%;
 }
 .white_bg.start_game{
@@ -470,8 +470,9 @@ line-height: 110%; /* 39.6px */
    transform: translateX(100%);
 }
 #start_game_3 .white_bg.start_game {
-    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/bgstartgame3.png');
-    background-position: center, top;
+    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/anim2.gif'),url('img/bgstartgame3.png');
+    background-position: center;
+    background-size: cover, cover, cover;
 }
 .white_bg.small h2 {
     color: #000;
