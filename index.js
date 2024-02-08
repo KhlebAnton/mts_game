@@ -9,14 +9,15 @@ const winBoard = document.getElementById('win_board');
 
 
 function next(hide, show) {
-    hide.closest('.screen').classList.add('hidden');
+    $('.screen').addClass('hidden');
     document.getElementById(`${show}`).classList.remove('hidden');
-    showBtnAnimation(show)
+    showBtnAnimation(show);
+    showLoadingProgress(0)
 }
-document.body.style.height = window.innerHeight + 'px';
+//document.body.style.height = window.innerHeight + 'px';
 
 window.addEventListener('resize', function() {
-  document.body.style.height = window.innerHeight + 'px';
+  //document.body.style.height = window.innerHeight + 'px';
 });
 
 
@@ -24,10 +25,16 @@ window.addEventListener('resize', function() {
 function showBtnAnimation(btn) {
     if(document.getElementById(`${btn}`).querySelector('.btn_start_game.animated')) {
         document.getElementById(`${btn}`).querySelector('.btn_start_game.animated').classList.add('go');
-        setTimeout(()=> {
+        /*setTimeout(()=> {
             document.getElementById(`${btn}`).querySelector('.btn_start_game.animated').classList.remove('go');
-        },4000)
+        },4000)*/
     }
+}
+function showLoadingProgress(num){
+    if(num < 15)
+        num = 15;
+    //$('.btn_start_game.animated.go:after').css("width",num+"%");
+    $("body").append('<style>.btn_start_game.animated.go::after{width: ' + num + '%;}</style>');
 }
 
 // прозрачный фон 
@@ -83,19 +90,34 @@ function HideWinBoard() {
 
 /// sections
 function showSection1(){
-    document.getElementById('section_1').classList.remove('hidden')
+    if(!tip_flags[0]) {
+        tip_flags[0] = true;
+        document.getElementById('section_1').classList.remove('hidden')
+    }
 }
 function showSection2(){
-    document.getElementById('section_2').classList.remove('hidden')
+    if(!tip_flags[1]) {
+        tip_flags[1] = true;
+        document.getElementById('section_2').classList.remove('hidden')
+    }
 }
 function showSection3(){
-    document.getElementById('section_3').classList.remove('hidden')
+    //if(!tip_flags[2]) {
+        tip_flags[2] = true;
+        document.getElementById('section_3').classList.remove('hidden')
+    //}
 }
 function showSection4(){
-    document.getElementById('section_4').classList.remove('hidden')
+    if(!tip_flags[3]) {
+        tip_flags[3] = true;
+        document.getElementById('section_4').classList.remove('hidden')
+    }
 }
 function showSection5(){
-    document.getElementById('section_5').classList.remove('hidden')
+    if(!tip_flags[4]) {
+        tip_flags[4] = true;
+        document.getElementById('section_5').classList.remove('hidden')
+    }
 }
 function closeSection(section){
     section.closest('.screen').classList.add('hidden')
@@ -112,3 +134,71 @@ function showVideo(elem) {
     document.getElementById('video').classList.remove("hidden");
 
 }
+
+function sendMessageToApp(msg){
+    window.parent.postMessage(msg, "*");
+}
+let wins = 0;
+let tip_flags = [
+    0,0,0,0,0
+]
+window.addEventListener('message', (msg) => {
+    let first_game = true;
+    msg = msg.data;
+    console.log("receiveMessage " + msg)
+    if (msg.includes("onContentLoading")) {
+        $(".btn_start_game.animated").addClass("go")
+        let progress = Math.round((msg.split(" ")[1]));
+        console.log("onContentLoading " + progress)
+        showLoadingProgress(progress)
+        //percentElement.innerText = progress + '%';
+    }
+    if (msg.includes("onContentLoaded")) {
+        console.log("onContentLoaded");
+        $(".btn_start_game.animated.go").removeClass("go")
+    }
+    if(msg.includes("win")){
+        wins++;
+        if(wins<=3)
+        next(null, 'win_board_'+wins)
+        else {
+            next(null, 'win_supergame')
+        }
+
+    }
+    /*if(msg.includes("win1")){
+        next(null, 'win_board_2')
+    }
+    if(msg.includes("win2")){
+        next(null, 'win_board_3')
+    }
+    if(msg.includes("win3")){
+        next(null, 'win_supergame')
+    }*/
+    if(msg.includes("tip1")){
+        showSection1()
+    }
+    if(msg.includes("tip2")){
+        showSection2()
+    }
+    if(msg.includes("tip3")){
+        showSection3()
+    }
+    if(msg.includes("tip4")){
+        showSection4()
+    }
+});
+
+$(".section ").on("click",function(){
+    $(this).addClass("hidden");
+})
+
+
+function startGame(index){
+    sendMessageToApp("startGame "+index);
+}
+/*
+
+$("body").on("click",function (){
+    sendMessageToApp("log fff");
+})*/
