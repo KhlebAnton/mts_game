@@ -229,7 +229,7 @@ h1.hello {
 
 }
 .btn_start_game.animated.go {
-    //animation: load 2s;
+    /* animation: load 2s; */
     border: 1px solid #E6E6E6;
     background: #FFF;
     color: #ffffff00;
@@ -243,7 +243,7 @@ h1.hello {
     height: 100%;
     z-index: -1;
     background: #FF0032;
-    //animation: loadProgress 1.5s;
+   /* animation: loadProgress 1.5s; */
     border-radius: 90px;
     border: 1px solid #E6E6E6;
     transition: 0.3s;

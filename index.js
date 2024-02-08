@@ -20,6 +20,19 @@ window.addEventListener('resize', function() {
   //document.body.style.height = window.innerHeight + 'px';
 });
 
+//copy promo
+function copyPromo() {
+    let promo = document.getElementById('copy_promocode').textContent;
+  
+    navigator.clipboard.writeText(promo)
+      .then(() => {
+  
+      })
+      .catch(err => {
+        console.log('Something went wrong', err);
+      });
+  }
+
 
 //анимация кнопки
 function showBtnAnimation(btn) {
