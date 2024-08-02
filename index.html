@@ -52,12 +52,11 @@
         
         <div id="video" class="screen video hidden">
             <div class="nav game">
-                <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu()"></div>
+                <div class="btn_back" ontouchstart onclick="closeSection(this), showStartMenu(), hideSkipVideo()"></div>
                 <div class="btn_again" ontouchstart onclick="playVideo()"></div>
             </div>
-            <video src="video/video_v5.mp4">
-
-            </video>
+            <video src="video/video_v5.mp4"></video>
+            <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game btn_start_game_video hidden" ontouchstart>Пропустить</div>
         </div>
         <div id="start_menu" class="screen bg_image welcome_screen">
             <div class="wrapper">
@@ -69,7 +68,7 @@
                 <div class="white_bg promo">
                     <p>Пройди игру и получи<br> промокод на ХХХ!</p>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game" ontouchstart>Начать игру</div>
+                        <div onclick="showVideo(this), playVideo(), showSkipVideo()" class="btn_start_game" ontouchstart>Начать игру</div>
                         <div onclick="showVideo(this), playVideo()" class="btn_go_info" ontouchstart>Как играть?</div>
                     </div>
                 </div>

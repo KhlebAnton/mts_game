@@ -215,3 +215,12 @@ function startGame(index){
 $("body").on("click",function (){
     sendMessageToApp("log fff");
 })*/
+
+/// показ кнопки пропустить в видео
+const btnSkipVideo = document.querySelector('.btn_start_game_video');
+function showSkipVideo() {
+    btnSkipVideo.classList.remove('hidden');
+}
+function hideSkipVideo() {
+    btnSkipVideo.classList.add('hidden');
+}
