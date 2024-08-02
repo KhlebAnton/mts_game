@@ -226,7 +226,11 @@
         <div id="game" class="screen game hidden">
             <div class="wrapper">
                 <div class="nav game">
-                    <div class="info_btn again" onclick="  startGame(wins);"></div>
+                    <div class="nav-game-btn-group">
+                        <div class="info_btn again" onclick="  startGame(wins);"></div>
+                        <div class="info_btn back" onclick="  startGame(wins);"></div>
+                    </div>
+                    
                     <div onclick="showInstruction(this)" class="info_btn"></div>
                 </div>
                 <!--<button onclick="next(this, 'win_board_1')">win test 1level</button>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="btn-icon/info" transform="matrix(0.979893 0 0 0.963225 0.00207052 0.0897263)">
+   <rect fill="white" fill-opacity="0.3" height="32" id="Rectangle 39495" rx="16" width="32" x="-0.19" y="0.14"/>
+   <line fill="none" id="svg_1" stroke="#ffffff" stroke-width="2" x1="7.83" x2="26.3" y1="16.37" y2="16.51"/>
+   <line fill="none" id="svg_2" points="null" stroke="#ffffff" stroke-width="2" x1="7.24" x2="13.99" y1="16.87" y2="10.12"/>
+   <line fill="none" id="svg_3" points="null" stroke="#ffffff" stroke-width="2" x1="7.15" x2="13.9" y1="15.55" y2="22.3"/>
+  </g>
+ </g>
+</svg>

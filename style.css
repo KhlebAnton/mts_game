@@ -187,11 +187,22 @@ h1.hello {
     height: 32px;
     background: url("img/info.svg");
 }
+.nav-game-btn-group {
+    display: flex;
+    gap: 5px;
+}
 .info_btn.again {
     transition: 0.2s;
     width: 32px;
     height: 32px;
+    
     background: url("img/replay.svg");
+}
+.info_btn.back {
+    transition: 0.2s;
+    width: 32px;
+    height: 32px;
+    background: url('./img/arrow_back.svg');
 }
 .nav.hidden {
     transition: 0.2s;
