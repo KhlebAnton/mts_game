@@ -57,6 +57,7 @@ function toggleBackImage() {
 
 
 
+
 //первый экран
 function showStartMenu() {
     startMenu.classList.remove('hidden')
@@ -76,6 +77,19 @@ function hideInstruction() {
     screenHiden.classList.remove("hidden");
     instruction.classList.add("hidden");
 }
+
+//menu
+let screenHidenMenu;
+const menuScreen = document.getElementById('menu');
+function showMenu(screen) {
+    menuScreen.classList.remove('hidden');
+    screenHidenMenu = screen.closest('.screen');
+    screenHidenMenu.classList.add("hidden");
+};
+function hideMenu() {
+    menuScreen.classList.add('hidden');
+    screenHidenMenu.classList.remove("hidden");
+};
 
 //показ этапа игры
 
@@ -176,6 +190,7 @@ window.addEventListener('message', (msg) => {
         next(null, 'win_board_'+wins)
         else {
             next(null, 'win_supergame')
+            //+win_supergame_promo
         }
 
     }
@@ -216,11 +231,43 @@ $("body").on("click",function (){
     sendMessageToApp("log fff");
 })*/
 
-/// показ кнопки пропустить в видео
-const btnSkipVideo = document.querySelector('.btn_start_game_video');
-function showSkipVideo() {
-    btnSkipVideo.classList.remove('hidden');
+//slider
+const slider = document.querySelector('.slider');
+const sliders = document.querySelectorAll('.slide');
+const slidePrev = document.querySelector('.slide-prev');
+const slideNext = document.querySelector('.slide-next');
+let count = 0;
+function nextSlide() {
+   slidePrev.classList.remove('disabled')
+   if(count != sliders.length - 1) {
+    sliders[count].classList.remove('visible')
+    sliders[count + 1].classList.add('visible')
+    count++;
+   }
+   if(count != sliders.length - 2) { 
+    slideNext.classList.add('disabled')
+   }
 }
-function hideSkipVideo() {
-    btnSkipVideo.classList.add('hidden');
-}
+function prevSlide() {
+    slideNext.classList.remove('disabled')
+    if(count != 0) {
+     sliders[count].classList.remove('visible')
+     sliders[count - 1].classList.add('visible')
+     count= count - 1;
+    }
+    if(count === 0) { 
+        slidePrev.classList.add('disabled')
+       }
+ }
+const sliderBtn = document.querySelector('.slider-progress');
+let countProgress = 60;
+ function sliderProgress() {
+    $("body").append('<style>.start_game .slider-progress.animated.go::after{width: ' + countProgress + '%;}</style>');
+    countProgress += 40;
+    if (countProgress > 100) {
+        setTimeout(()=> {
+            sliderBtn.classList.remove('animated')
+        }, 300)
+        
+    }
+ }

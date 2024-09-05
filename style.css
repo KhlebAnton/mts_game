@@ -56,6 +56,60 @@ body.bg_image {
     transform: translateY(-100%);
     transition: 0.5s;
 }
+.screen-menu {
+    z-index: 5;
+    
+}
+.screen-menu::before {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    transition: .2s;
+    background: url('img/bg.png') 50% / cover no-repeat;
+    pointer-events: none;
+}
+.screen-menu.hidden::before {
+    opacity: 0;
+}
+.screen.video:before {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    transition: .2s;
+    background: url('img/bg.png') 50% / cover no-repeat;
+    pointer-events: none;
+}
+.screen.video::before {
+    opacity: 0;
+}
+.instruction_screen::before {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    transition: .2s;
+    background: url('img/bg.png') 50% / cover no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+}
+.instruction_screen.hidden::before {
+    opacity: 0;
+}
+.screen-menu.hidden {
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
 .screen.hidden {
     visibility: hidden;
     touch-action: none;
@@ -86,24 +140,8 @@ body.bg_image {
     transform: translateY(100%);
     transition: 0.3s;
 }
-#supergame p {
-    color: #000;
-font-family: "MTS Text";
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 110%;
-text-align: start;
-margin-bottom: 1em;
-}
-#supergame p span{
-    color: #000;
-    font-family:"MTS Wide";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 110%; /* 26.4px */
-}
+
+
 .wrapper {
     width: 87%;
     margin: 0 auto;
@@ -123,7 +161,19 @@ h1.hello {
     border-radius: 22px;
     background-color: #FFF;
     padding: 20px;
+    
 
+}
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 39px;
+}
+.game-text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #545454;
 }
 #supergame .white_bg.start_game {
     height: 95%;
@@ -154,12 +204,13 @@ h1.hello {
     font-weight: 500;
     line-height: 110%; /* 26.4px */
 }
+
 .promo {
     height: 60%;
     color: #545454;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/promo.png'), url("img/promo_liner.svg");
     background-repeat: no-repeat;
-    background-position: center ,50% 30px, 50% 80px;
+    background-position: center ,50% 60px, 50% 100px;
     background-size: cover ,cover, contain;
 
     font-family: "MTS Wide";
@@ -176,16 +227,40 @@ h1.hello {
     margin: 0 auto;
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    padding: 12px 0;
 }
 .nav.game {
     justify-content: space-between;
+}
+.btn_start_game.secondary-btn {
+    background: #ffffff;
+    border: 1px solid #FF0032;
+    color: #FF0032;
+}
+.btn_start_game.secondary-btn.disabled {
+    border: 1px solid #252525;
+    color: #252525;
+    font-size: 15px;
+    pointer-events: none;
+}
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
 }
 .info_btn {
     transition: 0.2s;
     width: 32px;
     height: 32px;
     background: url("img/info.svg");
+}
+.info_btn:active {
+    transform: scale(0.95);
+}
+
+.info_btn.btn_menu {
+    background: url('./img/menu.svg') 50% / contain no-repeat;
 }
 .nav-game-btn-group {
     display: flex;
@@ -214,7 +289,7 @@ h1.hello {
     transition: 0.2s;
 }
 .btn_start_game:active {
-    transform: scale(0.9 ,0.9);
+    transform: scale(0.9);
     transition: 0.1s;
 }
 .btn_start_game {
@@ -255,13 +330,17 @@ h1.hello {
     background: #FFF;
     color: #ffffff00;
     z-index: 0;
+    pointer-events: none;
 }
 .btn_start_game.animated.go::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
     width: 100%;
-    height: 100%;
+    
     z-index: -1;
     background: #FF0032;
    /* animation: loadProgress 1.5s; */
@@ -427,6 +506,7 @@ h1.hello {
     height:100%;
     z-index: 3;
 }
+
 .white_bg.start_game {
     height: 95%;
     max-height: 600px;
@@ -505,7 +585,7 @@ line-height: 110%; /* 39.6px */
 }
 .white_bg.big {
     min-height: 400px;
-    height: 70%;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -544,7 +624,34 @@ line-height: 110%; /* 39.6px */
 .screen.game.section{
     height: 100%;
 }
-
+#start_game_1 .white_bg {
+    height: auto;
+    display: block;
+}
+.start_game .white_bg {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.start_game .inst_item_img {
+    width: 100%;
+    flex-grow: 2;
+}
+.instr6 {
+    width: 100%;
+    background: url('./img/instr/instr6.svg')50% / contain no-repeat;
+}
+.instr7 {
+    width: 100%;
+    background: url('./img/instr/instr7.svg')50% / contain no-repeat;
+}
+.start_game-text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26.4px;
+}
 .cube {
     background: url('img/instr/Group\ 15.svg') 50% / contain no-repeat;
     width: 211.61px;
@@ -556,7 +663,7 @@ line-height: 110%; /* 39.6px */
     height: 91.714px;
 }
 .next_tap {
-    background: url('img/instr/Group\ 28.svg') 50% / contain no-repeat;
+    background: url('img/instr/instr1.png') 50% / contain no-repeat;
     width: 225.592px;
     height: 91.714px;
 }
@@ -564,6 +671,21 @@ line-height: 110%; /* 39.6px */
     background: url('img/instr/Group\ 19.svg') 50% / contain no-repeat;
     width: 225.592px;
     height: 91.714px;
+}
+.instr3 {
+    background: url('img/instr/inst3.png') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
+.instr4 {
+    background: url('img/instr/instr4.svg') 50% / contain no-repeat;
+    width: 225.592px;
+    height: 91.714px;
+}
+.instr5 {
+    background: url('img/instr/instr5.svg') 50% / contain no-repeat;
+    width: 141px;
+    height: 128px;
 }
 .cube_manip {
     background: url('img/instr/Group\ 20.svg') 50% / contain no-repeat;
@@ -599,7 +721,7 @@ line-height: 110%; /* 39.6px */
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    
 }
 .screen.video.hidden {
     transform: translateX(100%);
@@ -618,9 +740,9 @@ video {
     width: 85%;
 }
 .btn_again {
-    width: 48px;
-    height: 48px;
-    background:  url('img/replay.svg') 50% / 100%  no-repeat ;
+    width: 32px;
+    height: 32px;
+    background:  url('img/replay.svg') 50% / contain  no-repeat ;
 }
 .screen.video .btn_back {
     border-radius: 50%;
@@ -631,8 +753,59 @@ video {
 .desktop {
     display: none;
 }
+.slide .inst_item_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+    width: 100%;
+    
+    height: 133px;
+}
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    height: fit-content;
+    min-height: 35vh;
+    
 
-
+}
+.slide {
+    min-width: 0;
+    width: 0;
+    text-wrap: nowrap;
+    
+    overflow: hidden;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.slide.visible {
+    min-width: 100%;
+    width: 100%;
+    
+}
+.slide-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slide-control > * {
+    transition: .2s;
+}
+.slide-control > *:active {
+    transform: scale(.95);
+}
+.slide-control > *.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+.start_game .slider-progress.animated.go::after {
+    width: 30%;
+}
 @media screen and (min-device-width: 768px) {
     .portrait {
         display: none;
