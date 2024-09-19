@@ -56,12 +56,19 @@
                 </div>
                 <div class="white_bg menu-list">
                     <h2>Меню</h2>
-                    <div onclick="hideMenu()" class="btn_start_game hidden continue_game" ontouchstart>Продолжить игру</div>
-                    <div onclick="hideMenu(); restart_game();" class="btn_start_game secondary-btn disabled continue_game hidden" id="level_again" ontouchstart>Начать уровень сначала</div>
-                    <div onclick="hideMenu(),next(this, 'start_game_2'), startGame(1), showBack()" class="btn_start_game secondary-btn disabled" id="level_1" ontouchstart>Уровень 1</div>
-                    <div onclick="hideMenu();next(this, 'start_game_3'); startGame(2); showBack()" class="btn_start_game secondary-btn disabled" id="level_2" ontouchstart>Уровень 2</div>
-                    <div onclick="hideMenu();next(this, 'supergame'); startGame(3); showBack()" class="btn_start_game secondary-btn disabled" id="level_3" ontouchstart>Уровень 3</div>
-                    <div onclick="hideMenu(); hideGame(); showStartMenu();continueHide()" class="btn_start_game secondary-btn hidden continue_game"  ontouchstart>Выйти на стартовый экран
+                    <div onclick="hideMenu()" class="btn_start_game hidden continue_game" ontouchstart>Продолжить игру
+                    </div>
+                    <div onclick="hideMenu(); restart_game();"
+                        class="btn_start_game secondary-btn disabled continue_game hidden" id="level_again"
+                        ontouchstart>Начать уровень сначала</div>
+                    <div onclick="hideMenu(),next(this, 'start_game_2'), startGame(1), showBack()"
+                        class="btn_start_game secondary-btn disabled" id="level_1" ontouchstart>Уровень 1</div>
+                    <div onclick="hideMenu();next(this, 'start_game_3'); startGame(2); showBack()"
+                        class="btn_start_game secondary-btn disabled" id="level_2" ontouchstart>Уровень 2</div>
+                    <div onclick="hideMenu();next(this, 'supergame'); startGame(3); showBack()"
+                        class="btn_start_game secondary-btn disabled" id="level_3" ontouchstart>Уровень 3</div>
+                    <div onclick="hideMenu(); hideGame(); showStartMenu();continueHide()"
+                        class="btn_start_game secondary-btn hidden continue_game" ontouchstart>Выйти на стартовый экран
                     </div>
                 </div>
 
@@ -71,10 +78,12 @@
         <div id="video" class="screen video hidden">
             <div class="nav game">
                 <div class="info_btn close" ontouchstart
-                    onclick="closeSection(this), instruction.classList.remove('hidden');"></div>
+                    onclick="closeSection(this), instruction.classList.remove('hidden'), hideSkipVideo();"></div>
                 <div class="btn_again" ontouchstart onclick="playVideo()"></div>
             </div>
             <video src="video/video_v5.mp4"></video>
+            <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game btn_start_game_video hidden"
+                ontouchstart>Пропустить</div>
 
         </div>
         <div id="start_menu" class="screen bg_image welcome_screen">
@@ -88,7 +97,8 @@
                 <div class="white_bg promo">
                     <p>Пройди игру и получи<br> промокод на МТС Premium!</p>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game" id="launch_button" ontouchstart>
+                        <div onclick="showVideo(this), playVideo(), showSkipVideo()" class="btn_start_game"
+                            id="launch_button" ontouchstart>
                             Начать игру</div>
                         <div onclick="showInstruction(this)" class="btn_go_info" ontouchstart>Как играть?</div>
                     </div>
@@ -189,8 +199,9 @@
                         </div>
                     </div>
 
-                    <div onclick="next(this, 'game'); toggleBackImage()"
-                        class="btn_start_game animated go slider-progress" ontouchstart>Начать игру</div>
+                    <div onclick="next(this, 'game'); toggleBackImage()" class="btn_start_game animated go hidden"
+                        ontouchstart>Начать игру</div>
+                    <div onclick="" class="btn-slider animated go slider-progress" ontouchstart>Начать игру</div>
                 </div>
             </div>
         </div>
@@ -317,7 +328,7 @@
 
                 </div>
             </div>
-            
+
 
         </div>
         <div id="win_supergame_promo" class="screen win_screen hidden">
@@ -330,12 +341,13 @@
                     <h2>Поздравляем! Ты прошел игру!</h2>
                 </div>
                 <div class="white_bg big">
-                    <p>У тебя получилось собрать <br>все иконки, а это значит, <br>что ты можешь забрать свой заслуженный промокод <br>на МТС Premium!</p>
+                    <p>У тебя получилось собрать <br>все иконки, а это значит, <br>что ты можешь забрать свой
+                        заслуженный промокод <br>на МТС Premium!</p>
                     <div class="btn_group">
                         <div id="copy_promocode" onclick="copyPromo()" style="margin-bottom: 10px;"
                             class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
-                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()"
-                            class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
+                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()" class="btn_start_game"
+                            ontouchstart>Пройти игру еще раз</div>
                     </div>
 
                 </div>
@@ -352,11 +364,12 @@
                     <h2>Поздравляем! Ты прошел все уровни!</h2>
                 </div>
                 <div class="white_bg big">
-                    <p>Может ты хочешь пройти игру еще раз и собрать иконки всех сервисов МТС Premium, чтобы получить наш классный приз?</p>
+                    <p>Может ты хочешь пройти игру еще раз и собрать иконки всех сервисов МТС Premium, чтобы получить
+                        наш классный приз?</p>
                     <div class="btn_group">
-                        
-                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()"
-                            class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
+
+                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()" class="btn_start_game"
+                            ontouchstart>Пройти игру еще раз</div>
                     </div>
 
                 </div>

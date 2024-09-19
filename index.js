@@ -314,14 +314,15 @@ function prevSlide() {
         slidePrev.classList.add('disabled')
        }
  }
-const sliderBtn = document.querySelector('.slider-progress');
+const sliderBtn = document.querySelector('.btn-slider');
 let countProgress = 60;
  function sliderProgress() {
-    $("body").append('<style>.start_game .slider-progress.animated.go::after{width: ' + countProgress + '%;}</style>');
+    $("body").append('<style>.start_game .btn-slider.animated.go::after{width: ' + countProgress + '%;}</style>');
     countProgress += 40;
     if (countProgress > 100) {
         setTimeout(()=> {
-            sliderBtn.classList.remove('animated')
+            sliderBtn.classList.add('hidden');
+            sliderBtn.previousElementSibling.classList.remove('hidden')
         }, 300)
 
     }
@@ -331,4 +332,13 @@ let countProgress = 60;
  }
 function continueHide(){
     $(".continue_game").addClass("hidden")
+}
+
+/// показ кнопки пропустить в видео
+const btnSkipVideo = document.querySelector('.btn_start_game_video');
+function showSkipVideo() {
+    btnSkipVideo.classList.remove('hidden');
+}
+function hideSkipVideo() {
+    btnSkipVideo.classList.add('hidden');
 }
