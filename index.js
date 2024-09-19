@@ -60,6 +60,8 @@ function toggleBackImage() {
 
 //первый экран
 function showStartMenu() {
+
+    $('.screen').addClass('hidden');
     startMenu.classList.remove('hidden')
 }
 function hideStartMenu() {
@@ -105,7 +107,16 @@ function showGame() {
     toggleBackImage();
     game.classList.remove('hidden')
 }
-
+function hideGame() {
+    document.querySelector('body').classList.add('bg_image');
+    game.classList.add('hidden')
+}
+function showBack(){
+    document.querySelector('body').classList.add('bg_image');
+}
+function hideBack(){
+    document.querySelector('body').classList.remove('bg_image');
+}
 
 // при прохождении уровня
 function showWinBoard() {
@@ -166,6 +177,13 @@ function sendMessageToApp(msg){
     window.parent.postMessage(msg, "*");
 }
 let wins = 0;
+let getAllLogos = [
+    false,
+    false,
+    false,
+    false
+]
+
 let tip_flags = [
     0,0,0,0,0
 ]
@@ -184,12 +202,31 @@ window.addEventListener('message', (msg) => {
         console.log("onContentLoaded");
         $(".btn_start_game.animated.go").removeClass("go")
     }
-    if(msg.includes("win")){
-        wins++;
-        if(wins<=3)
-        next(null, 'win_board_'+wins)
+    if(msg.includes("GameFinish ")){
+        console.log(msg)
+        if(msg.split("GameFinish ")[1]=="true")
+            getAllLogos[current_game]=true;
+      //  wins++;
+        $("#launch_button").text("Продолжить игру")
+        if(current_game<2)
+            $("#launch_button").attr("onclick","next(this, 'start_game_"+(current_game+1)+"' ); startGame("+(current_game+1)+")");
+        if(current_game==2)
+            $("#launch_button").attr("onclick","next(this, 'supergame' ); startGame(3)");
+        if(current_game<3)
+            next(null, 'win_board_'+(current_game+1))
         else {
-            next(null, 'win_supergame')
+
+            $("#launch_button").text("Начать заново")
+            $("#launch_button").attr("onclick","next(this, 'start_game_2' ); startGame(1)");
+            let allLogosGetted = true;
+            for(let i = 0; i < getAllLogos.length; i++){
+                if(!getAllLogos[i])
+                    allLogosGetted = false;
+            }
+            if(allLogosGetted)
+                next(null, 'win_supergame_promo')
+            else
+                next(null, 'win_supergame')
             //+win_supergame_promo
         }
 
@@ -221,9 +258,27 @@ $(".section ").on("click",function(){
     $(this).addClass("hidden");
 })
 
-
+let current_game = -1;
+let max_game = -1;
 function startGame(index){
     sendMessageToApp("startGame "+index);
+    current_game = index;
+    if(current_game > max_game)
+        max_game = current_game;
+    for(let i = 1; i <= max_game; i++){
+        $("#level_"+i).removeClass("disabled")
+    }
+
+    $("#level_again").removeClass("disabled")
+    continueShow();
+}
+function restart_game(){
+    let level_class='start_game_'+(current_game+1);
+    if(current_game == 3)
+        level_class="supergame";
+    next(this, level_class);
+    startGame(current_game);
+    showBack()
 }
 /*
 
@@ -268,6 +323,12 @@ let countProgress = 60;
         setTimeout(()=> {
             sliderBtn.classList.remove('animated')
         }, 300)
-        
+
     }
  }
+ function continueShow(){
+    $(".continue_game").removeClass("hidden")
+ }
+function continueHide(){
+    $(".continue_game").addClass("hidden")
+}

@@ -239,8 +239,10 @@ h1 {
     color: #FF0032;
 }
 .btn_start_game.secondary-btn.disabled {
-    border: 1px solid #252525;
-    color: #252525;
+    //border: 1px solid #252525;
+   // color: #252525;
+    border: 1px solid #b1b1b1;
+    color: #b1b1b1;
     font-size: 15px;
     pointer-events: none;
 }
@@ -806,7 +808,7 @@ video {
 .start_game .slider-progress.animated.go::after {
     width: 30%;
 }
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
     .portrait {
         display: none;
     }
@@ -905,4 +907,7 @@ video {
     .landscape .loadPage {
         background: url("img/picLandscpae.png") 100% 0% / 100% 100% no-repeat;
     }
+}
+.continue_game.hidden {
+    display:none
 }

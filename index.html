@@ -56,12 +56,12 @@
                 </div>
                 <div class="white_bg menu-list">
                     <h2>Меню</h2>
-                    <div onclick="" class="btn_start_game" ontouchstart>Продолжить игру</div>
-                    <div onclick="" class="btn_start_game secondary-btn" ontouchstart>Начать уровень сначала</div>
-                    <div onclick="" class="btn_start_game secondary-btn disabled" ontouchstart>Уровень 1</div>
-                    <div onclick="" class="btn_start_game secondary-btn disabled" ontouchstart>Уровень 2</div>
-                    <div onclick="" class="btn_start_game secondary-btn disabled" ontouchstart>Уровень 3</div>
-                    <div onclick="" class="btn_start_game secondary-btn disabled" ontouchstart>Выйти на стартовый экран
+                    <div onclick="hideMenu()" class="btn_start_game hidden continue_game" ontouchstart>Продолжить игру</div>
+                    <div onclick="hideMenu(); restart_game();" class="btn_start_game secondary-btn disabled continue_game hidden" id="level_again" ontouchstart>Начать уровень сначала</div>
+                    <div onclick="hideMenu(),next(this, 'start_game_2'), startGame(1), showBack()" class="btn_start_game secondary-btn disabled" id="level_1" ontouchstart>Уровень 1</div>
+                    <div onclick="hideMenu();next(this, 'start_game_3'); startGame(2); showBack()" class="btn_start_game secondary-btn disabled" id="level_2" ontouchstart>Уровень 2</div>
+                    <div onclick="hideMenu();next(this, 'supergame'); startGame(3); showBack()" class="btn_start_game secondary-btn disabled" id="level_3" ontouchstart>Уровень 3</div>
+                    <div onclick="hideMenu(); hideGame(); showStartMenu();continueHide()" class="btn_start_game secondary-btn hidden continue_game"  ontouchstart>Выйти на стартовый экран
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
                 <div class="white_bg promo">
                     <p>Пройди игру и получи<br> промокод на МТС Premium!</p>
                     <div class="btn_group">
-                        <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game" ontouchstart>
+                        <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game" id="launch_button" ontouchstart>
                             Начать игру</div>
                         <div onclick="showInstruction(this)" class="btn_go_info" ontouchstart>Как играть?</div>
                     </div>
@@ -309,9 +309,9 @@
                     <h2>УРОВЕНЬ
                         ПРОЙДЕН!</h2>
                     <div class="btn_group">
-                        <div onclick="next(this, 'supergame');toggleBackImage(); startGame(2)" class="btn_start_game"
+                        <div onclick="next(this, 'supergame');toggleBackImage(); startGame(3)" class="btn_start_game"
                             ontouchstart>К следующему уровню</div>
-                        <div onclick="next(this, 'start_game_3' ); startGame(1); toggleBackImage(); wins--;"
+                        <div onclick="next(this, 'start_game_3' ); startGame(2); toggleBackImage(); wins--;"
                             class="btn_go_info" ontouchstart>Начать уровень заново</div>
                     </div>
 
@@ -334,7 +334,7 @@
                     <div class="btn_group">
                         <div id="copy_promocode" onclick="copyPromo()" style="margin-bottom: 10px;"
                             class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
-                        <div onclick="next(this, 'start_game_1' ); startGame(0);  wins=0;"
+                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()"
                             class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
                     </div>
 
@@ -355,7 +355,7 @@
                     <p>Может ты хочешь пройти игру еще раз и собрать иконки всех сервисов МТС Premium, чтобы получить наш классный приз?</p>
                     <div class="btn_group">
                         
-                        <div onclick="next(this, 'start_game_1' ); startGame(0);  wins=0;"
+                        <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()"
                             class="btn_start_game" ontouchstart>Пройти игру еще раз</div>
                     </div>
 
