@@ -161,16 +161,24 @@ function closeSection(section){
     section.closest('.screen').classList.add('hidden')
 }
 
+
 const video = document.querySelector('video');
 function playVideo() {
     video.currentTime = 0;
     video.play();
 }
 
-function showVideo(elem) {
-    elem.closest('.screen').classList.add('hidden')
+let videoScreenHIdden;
+//video
+function showVideo(screen) {
+    videoScreenHIdden = screen.closest('.screen');
+    videoScreenHIdden.classList.add("hidden"); 
     document.getElementById('video').classList.remove("hidden");
 
+}
+function closeVideo(screen){
+    screen.closest('.screen').classList.add('hidden');
+    videoScreenHIdden.classList.remove("hidden"); 
 }
 
 function sendMessageToApp(msg){

@@ -78,12 +78,12 @@
         <div id="video" class="screen video hidden">
             <div class="nav game">
                 <div class="info_btn close" ontouchstart
-                    onclick="closeSection(this), instruction.classList.remove('hidden'), hideSkipVideo();"></div>
+                    onclick="closeVideo(this), hideSkipVideo();"></div>
                 <div class="btn_again" ontouchstart onclick="playVideo()"></div>
             </div>
             <video src="video/video_v5.mp4"></video>
             <div onclick="next(this, 'start_game_1' ); startGame(0)" class="btn_start_game btn_start_game_video hidden"
-                ontouchstart>Пропустить</div>
+                ontouchstart>Далее</div>
 
         </div>
         <div id="start_menu" class="screen bg_image welcome_screen">
