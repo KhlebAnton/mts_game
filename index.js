@@ -252,6 +252,9 @@ window.addEventListener('message', (msg) => {
     if(msg.includes("tip4")){
         showSection4()
     }
+    if(msg.includes("tip5")){
+        showSection5()
+    }
 });
 
 $(".section ").on("click",function(){
