@@ -334,7 +334,7 @@ function prevSlide() {
 const sliderBtn = document.querySelector('.btn-slider');
 let countProgress = 60;
  function sliderProgress() {
-    $("body").append('<style>.start_game .btn-slider.animated.go::after{width: ' + countProgress + '%;}</style>');
+    $("body").append('<style>.start_game .btn-slider.animated.go::after{width: calc(' + countProgress + '% - 6px);}</style>');
     countProgress += 40;
     if (countProgress > 100) {
         setTimeout(()=> {
