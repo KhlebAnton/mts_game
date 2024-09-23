@@ -27,6 +27,8 @@ body {
 }
 .main.hidden {
     transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
     transition: 0.3s;
     background: #ffffff00;
 }
@@ -55,6 +57,8 @@ body.bg_image {
 }
 .game.hidden {
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
     transition: 0.5s;
 }
 .screen-menu {
@@ -109,6 +113,8 @@ body.bg_image {
 }
 .screen-menu.hidden {
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
     transition: 0.5s;
 }
 .screen.hidden {
@@ -119,26 +125,38 @@ body.bg_image {
 }
 #start_menu.hidden {
     transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
     transition: 0.3s;
 }
 #instruction.hidden {
     transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
     transition: 0.3s;
 }
 #start_game_1.hidden {
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
     transition: 0.3s;
 }
 #start_game_2.hidden {
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
     transition: 0.3s;
 }
 #start_game_3.hidden {
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
     transition: 0.3s;
 }
 #supergame.hidden {
     transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
     transition: 0.3s;
 }
 
@@ -260,6 +278,8 @@ h1 {
 }
 .info_btn:active {
     transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
 }
 
 .info_btn.btn_menu {
@@ -285,16 +305,15 @@ h1 {
 .nav.hidden {
     transition: 0.2s;
     transform: translateY(-100px);
+    -webkit-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
     height: 0;
 }
 .info_btn.close {
     background: url("img/close.svg");
     transition: 0.2s;
 }
-.btn_start_game:active {
-    transform: scale(0.9);
-    transition: 0.1s;
-}
+
 .btn_start_game.hidden , .btn-slider.hidden {
 display: none;
 }
@@ -433,6 +452,8 @@ display: none;
         color: #ffffff00;
         z-index: 0;
         transform: scale(0.9 , 0.9);
+        -webkit-transform: scale(0.9 , 0.9);
+    -moz-transform: scale(0.9 , 0.9);
     }
 
     100%{
@@ -462,6 +483,8 @@ display: none;
 }
 .btn_go_info:active {
     transform: scale(0.9 ,0.9);
+    -webkit-transform: scale(0.9 ,0.9);
+    -moz-transform: scale(0.9 ,0.9);
     transition: 0.1s;
 }
 .btn_go_info.prize {
@@ -471,6 +494,8 @@ display: none;
 }
 .btn_go_info.prize:active {
     transform: scale(0.9 ,0.9);
+    -webkit-transform: scale(0.9 ,0.9);
+    -moz-transform: scale(0.9 ,0.9);
     transition: 0.1s;
 }
 .btn_group{
@@ -563,18 +588,26 @@ line-height: 110%; /* 39.6px */
 #win_board_1.hidden {
     transition: 0.3s;
    transform: translateY(100%);
+   -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
 }
 #win_board_2.hidden {
     transition: 0.3s;
    transform: translateY(100%);
+   -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
 }
 #win_board_3.hidden {
     transition: 0.3s;
    transform: translateX(100%);
+   -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
 }
 #win_supergame.hidden {
     transition: 0.3s;
    transform: translateX(100%);
+   -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
 }
 #start_game_3 .white_bg.start_game {
     background-image:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 65.84%, #FFF 100%), url('img/anim2.gif'),url('img/bgstartgame3.png');
@@ -731,6 +764,8 @@ line-height: 110%; /* 39.6px */
 }
 .screen.video.hidden {
     transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
     
 } 
 video {
@@ -804,6 +839,8 @@ video {
 }
 .slide-control > *:active {
     transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
 }
 .slide-control > *.disabled {
     opacity: 0.4;
