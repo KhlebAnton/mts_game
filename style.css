@@ -760,6 +760,7 @@ line-height: 110%; /* 39.6px */
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: absolute;
     
 }
 .screen.video.hidden {
@@ -769,11 +770,17 @@ line-height: 110%; /* 39.6px */
     
 } 
 video {
-    max-height: 75%;
-    margin-bottom: 40px;
-    object-fit: contain;
+    position: absolute;
+    width: 98%;
+
+    height: 85%;
+    object-fit: cover;
+    bottom: 1%;
+    
     border: 10px solid #E6E6E6;
-    border-radius: 25px; 
+    border-radius:  25px; 
+   pointer-events: none;
+    
       
 }
 .screen.video .nav {
@@ -781,9 +788,17 @@ video {
     width: 85%;
 }
 .btn_again {
-    width: 32px;
-    height: 32px;
+    width: 62px;
+    height: 62px;
+    transition: .2s;
+    position: absolute;
+    top: calc(50% - 31px);
+    left: calc(50% - 31px);
     background:  url('img/replay.svg') 50% / contain  no-repeat ;
+}
+.btn_again.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 .screen.video .btn_back {
     border-radius: 50%;

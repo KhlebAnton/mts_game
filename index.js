@@ -162,10 +162,16 @@ function closeSection(section){
 }
 
 
+
+const btnAgainVideo = document.querySelector('.btn_again');
 const video = document.querySelector('video');
+video.addEventListener('ended',()=> {
+    btnAgainVideo.classList.remove('hidden')
+})
 function playVideo() {
     video.currentTime = 0;
     video.play();
+    btnAgainVideo.classList.add('hidden')
 }
 
 let videoScreenHIdden;
@@ -344,12 +350,17 @@ let countProgress = 60;
 function continueHide(){
     $(".continue_game").addClass("hidden")
 }
-
+function openBtnSkip() {
+    btnSkipVideo.classList.remove('hidden');
+    video.removeEventListener('ended', openBtnSkip)
+}
 /// показ кнопки пропустить в видео
 const btnSkipVideo = document.querySelector('.btn_start_game_video');
 function showSkipVideo() {
-    btnSkipVideo.classList.remove('hidden');
+    video.addEventListener('ended', openBtnSkip)
+    
 }
 function hideSkipVideo() {
     btnSkipVideo.classList.add('hidden');
+    video.removeEventListener('ended', openBtnSkip)
 }
