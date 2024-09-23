@@ -12,6 +12,7 @@
     src: url('fonts/MTSText-Regular.ttf');
 }
 * {
+    -webkit-tap-highlight-color:transparent;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -239,8 +240,8 @@ h1 {
     color: #FF0032;
 }
 .btn_start_game.secondary-btn.disabled {
-    //border: 1px solid #252525;
-   // color: #252525;
+    /* border: 1px solid #252525;
+    color: #252525; */
     border: 1px solid #b1b1b1;
     color: #b1b1b1;
     font-size: 15px;
