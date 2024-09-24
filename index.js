@@ -47,7 +47,7 @@ function showLoadingProgress(num){
     if(num < 15)
         num = 15;
     //$('.btn_start_game.animated.go:after').css("width",num+"%");
-    $("body").append('<style>.btn_start_game.animated.go::after{width: ' + num + '%;}</style>');
+    $("body").append('<style>.btn_start_game.animated.go::after{width: calc(' + num + '% - 6px);}</style>');
 }
 
 // прозрачный фон 
@@ -166,7 +166,8 @@ function closeSection(section){
 const btnAgainVideo = document.querySelector('.btn_again');
 const video = document.querySelector('video');
 video.addEventListener('ended',()=> {
-    btnAgainVideo.classList.remove('hidden')
+    btnAgainVideo.classList.remove('hidden');
+    videoViewed = true;
 })
 function playVideo() {
     video.currentTime = 0;
@@ -175,6 +176,19 @@ function playVideo() {
 }
 
 let videoScreenHIdden;
+let videoViewed = false;
+
+function onClickBtnStartGame(el) {
+    if(videoViewed) {
+        next(el, 'start_game_1' ); 
+        startGame(0); 
+        hideSkipVideo();
+    } else {
+        showVideo(el);
+        playVideo();
+        showSkipVideo();
+    }
+}
 //video
 function showVideo(screen) {
     videoScreenHIdden = screen.closest('.screen');
