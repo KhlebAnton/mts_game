@@ -378,3 +378,12 @@ function hideSkipVideo() {
     btnSkipVideo.classList.add('hidden');
     video.removeEventListener('ended', openBtnSkip)
 }
+
+
+$(window).focus(function() {
+    console.log("window focus")
+    sendMessageToApp("recalibrate");
+});
+$(window).blur(function() {
+    console.log("window blur")
+});
