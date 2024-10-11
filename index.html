@@ -160,50 +160,53 @@
                     <div onclick="showMenu(this)" class="info_btn btn_menu" ontouchstart></div>
                     <div onclick="showInstruction(this)" class="info_btn" ontouchstart></div>
                 </div>
-                <div class="white_bg">
-                    <h1>Начнем <br>
-                        с обучения</h1>
-                </div>
-                <div class="white_bg">
-                    <div class="slider">
-                        <div class="slide visible">
-                            <p class="game-text">Нажимай на клетки <br>и передвигай шар</p>
-                            <div class="inst_item_img next_tap"></div>
-                        </div>
-                        <div class="slide ">
-                            <p class="game-text">Соедини стороны <br> мостиков, чтобы попасть <br> с одного куба
-                                на другой</p>
-                            <div class="inst_item_img cube_red"></div>
-                        </div>
-                        <div class="slide ">
-                            <p class="game-text">Можешь пройти уровни<br> просто так, но чтобы<br> получить подписку
-                                МТС<br> Premium, собери все<br> иконки экосистемы МТС</p>
-                            <div class="inst_item_img instr3"></div>
-                        </div>
+                <div class="white_bg_container">
+                    <div class="white_bg">
+                        <h1>Начнем <br>
+                            с обучения</h1>
                     </div>
-                    <div class="slide-control">
-                        <div class="slide-prev disabled" ontouchstart onclick="prevSlide()">
-                            <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
-                                <path d="M54 37H20M20 37L35.2105 52M20 37L35.2105 22" stroke="#FF0032" />
-                            </svg>
-
+                    <div class="white_bg">
+                        <div class="slider">
+                            <div class="slide visible">
+                                <p class="game-text">Нажимай на клетки <br>и передвигай шар</p>
+                                <div class="inst_item_img next_tap"></div>
+                            </div>
+                            <div class="slide ">
+                                <p class="game-text">Соедини стороны <br> мостиков, чтобы попасть <br> с одного куба
+                                    на другой</p>
+                                <div class="inst_item_img cube_red"></div>
+                            </div>
+                            <div class="slide ">
+                                <p class="game-text">Можешь пройти уровни<br> просто так, но чтобы<br> получить подписку
+                                    МТС<br> Premium, собери все<br> иконки экосистемы МТС</p>
+                                <div class="inst_item_img instr3"></div>
+                            </div>
                         </div>
-                        <div class="slide-next" ontouchstart onclick="nextSlide(), sliderProgress()">
-                            <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
-                                <path d="M20 37H54M54 37L38.7895 52M54 37L38.7895 22" stroke="#FF0032" />
-                            </svg>
-
+                        <div class="slide-control">
+                            <div class="slide-prev disabled" ontouchstart onclick="prevSlide()">
+                                <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
+                                    <path d="M54 37H20M20 37L35.2105 52M20 37L35.2105 22" stroke="#FF0032" />
+                                </svg>
+    
+                            </div>
+                            <div class="slide-next" ontouchstart onclick="nextSlide(), sliderProgress()">
+                                <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
+                                    <path d="M20 37H54M54 37L38.7895 52M54 37L38.7895 22" stroke="#FF0032" />
+                                </svg>
+    
+                            </div>
                         </div>
+    
+                        <div onclick="next(this, 'game'); toggleBackImage()" class="btn_start_game animated go hidden"
+                            ontouchstart>Начать игру</div>
+                        <div onclick="" class="btn-slider animated go slider-progress" ontouchstart>Начать игру</div>
                     </div>
-
-                    <div onclick="next(this, 'game'); toggleBackImage()" class="btn_start_game animated go hidden"
-                        ontouchstart>Начать игру</div>
-                    <div onclick="" class="btn-slider animated go slider-progress" ontouchstart>Начать игру</div>
                 </div>
+                
             </div>
         </div>
         <div id="start_game_2" class="screen start_game hidden">

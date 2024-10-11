@@ -922,7 +922,12 @@ line-height: 110%; /* 39.6px */
 }
 #start_game_1 .white_bg {
     height: auto;
+    
     display: block;
+}
+#start_game_1 .wrapper {
+    display: flex;
+    flex-direction: column; height: 100%;
 }
 .start_game .white_bg {
     display: -webkit-box;
@@ -945,6 +950,13 @@ line-height: 110%; /* 39.6px */
     -webkit-box-flex: 2;
         -ms-flex-positive: 2;
             flex-grow: 2;
+}
+.white_bg_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    padding-bottom: 50px;
 }
 .instr6 {
     width: 100%;
@@ -1049,10 +1061,11 @@ video {
     position: absolute;
     width: 98%;
 
-    height: 85%;
+    height: 75%;
+    min-height: 550px;
     -o-object-fit: cover;
        object-fit: cover;
-    bottom: 1%;
+    top: calc(50% - (75% / 2));
     
     border: 10px solid #E6E6E6;
     border-radius:  25px; 
@@ -1168,7 +1181,7 @@ video {
     -moz-transform: scale(.95);
 }
 .slide-control > *.disabled {
-    opacity: 0.4;
+    opacity: 0;
     pointer-events: none;
 }
 .start_game .slider-progress.animated.go::after {
