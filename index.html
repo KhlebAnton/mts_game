@@ -78,13 +78,12 @@
 
         <div id="video" class="screen video hidden">
             <div class="nav game">
-                <div class="info_btn close" ontouchstart
-                    onclick="closeVideo(this), hideSkipVideo();"></div>
+                <div class="info_btn close" ontouchstart onclick="closeVideo(this), hideSkipVideo();"></div>
                 <div class="btn_again hidden" ontouchstart onclick="playVideo()"></div>
             </div>
             <video src="video/video_v5.mp4" playsinline></video>
-            <div onclick="next(this, 'start_game_1' ); startGame(0), hideSkipVideo()" class="btn_start_game btn_start_game_video hidden"
-                ontouchstart>Далее</div>
+            <div onclick="next(this, 'start_game_1' ); startGame(0), hideSkipVideo()"
+                class="btn_start_game btn_start_game_video hidden" ontouchstart>Далее</div>
 
         </div>
         <div id="start_menu" class="screen bg_image welcome_screen">
@@ -98,8 +97,7 @@
                 <div class="white_bg promo">
                     <p>Пройди игру и получи<br> промокод на МТС Premium!</p>
                     <div class="btn_group">
-                        <div onclick="onClickBtnStartGame(this)" class="btn_start_game"
-                            id="launch_button" ontouchstart>
+                        <div onclick="onClickBtnStartGame(this)" class="btn_start_game" id="launch_button" ontouchstart>
                             Начать игру</div>
                         <div onclick="showInstruction(this)" class="btn_go_info" ontouchstart>Как играть?</div>
                     </div>
@@ -186,27 +184,29 @@
                             <div class="slide-prev disabled" ontouchstart onclick="prevSlide()">
                                 <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
+                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white"
+                                        stroke="#FF0032" />
                                     <path d="M54 37H20M20 37L35.2105 52M20 37L35.2105 22" stroke="#FF0032" />
                                 </svg>
-    
+
                             </div>
                             <div class="slide-next" ontouchstart onclick="nextSlide(), sliderProgress()">
                                 <svg width="74" height="74" viewBox="0 0 74 74" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white" stroke="#FF0032" />
+                                    <rect x="0.5" y="0.5" width="73" height="73" rx="36.5" fill="white"
+                                        stroke="#FF0032" />
                                     <path d="M20 37H54M54 37L38.7895 52M54 37L38.7895 22" stroke="#FF0032" />
                                 </svg>
-    
+
                             </div>
                         </div>
-    
+
                         <div onclick="next(this, 'game'); toggleBackImage()" class="btn_start_game animated go hidden"
                             ontouchstart>Начать игру</div>
                         <div onclick="" class="btn-slider animated go slider-progress" ontouchstart>Начать игру</div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div id="start_game_2" class="screen start_game hidden">
@@ -217,14 +217,15 @@
                 </div>
                 <div class="white_bg">
                     <div class="">
-                        <h1>Поздравляем. <br>Ты прошел обучение.</h1>
+                        <h1>Теперь ты готов.</h1>
                         <br>
                         <p class="start_game-text">
-                            Теперь ты готов. Начнем?
+                            Чтобы пройти этот уровень, нужно собрать все иконки и встать на портал.
+                            Начнем?
                         </p>
                     </div>
 
-                    <div class="inst_item_img instr4"></div>
+                    <div class="inst_item_img instr6"></div>
                     <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>
                         Начать игру</div>
                 </div>
@@ -239,7 +240,7 @@
                 <div class="white_bg">
                     <div class="">
                         <p class="start_game-text">
-                            Чтобы пройти этот уровень, нужно встать на портал
+                            Есть и другие порталы, которые телепортируют тебя с одного куба на другой. Ищи, чтобы перенести шарик и собрать все иконки сервисов
                         </p>
                     </div>
 
