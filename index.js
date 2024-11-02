@@ -240,8 +240,14 @@ window.addEventListener('message', (msg) => {
             $("#launch_button").attr("onclick","next(this, 'start_game_"+(current_game+1)+"' ); startGame("+(current_game+1)+")");
         if(current_game==2)
             $("#launch_button").attr("onclick","next(this, 'supergame' ); startGame(3)");
-        if(current_game<3)
-            next(null, 'win_board_'+(current_game+1))
+        if(current_game<3) {
+            next(null, 'win_board_' + (current_game + 1))
+            if(current_game==0) {
+                next(this, 'start_game_2');
+                toggleBackImage();
+                startGame(1)
+            }
+        }
         else {
 
             $("#launch_button").text("Начать заново")
