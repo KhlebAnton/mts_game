@@ -44,10 +44,12 @@ function showBtnAnimation(btn) {
     }
 }
 function showLoadingProgress(num){
+    console.log("showLoadingProgress ",num)
     if(num < 15)
         num = 15;
     //$('.btn_start_game.animated.go:after').css("width",num+"%");
-    $("body").append('<style>.btn_start_game.animated.go::after{width: calc(' + num + '% - 6px);}</style>');
+    $(".btn_start_game.animated.go o").css("width",'calc(' + num + '% - 6px)');
+   // $("body").append('<style>.btn_start_game.animated.go::after{width: calc(' + num + '% - 6px);}</style>');
 }
 
 // прозрачный фон 
@@ -354,7 +356,10 @@ function prevSlide() {
 const sliderBtn = document.querySelector('.btn-slider');
 let countProgress = 60;
  function sliderProgress() {
-    $("body").append('<style>.start_game .btn-slider.animated.go::after{width: calc(' + countProgress + '% - 6px);}</style>');
+     console.log("sliderProgress",countProgress)
+    //$("body").append('<style>.start_game .btn-slider.animated.go::after{width: calc(' + countProgress + '% - 6px);}</style>');
+
+     $(".start_game .btn-slider.animated.go o").css("width",'calc(' + countProgress + '% - 6px)');
     countProgress += 40;
     if (countProgress > 100) {
         setTimeout(()=> {
