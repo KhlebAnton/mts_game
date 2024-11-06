@@ -454,23 +454,28 @@ display: none;
     z-index: 0;
     pointer-events: none;
 }
-.btn_start_game.animated.go::after , .btn-slider.animated.go::after {
+.btn_start_game.animated o {
+    display:none;
+}
+.btn_start_game.animated.go o {
+    display:block;
+}
+.btn_start_game.animated.go o , .btn-slider.animated.go o {
     content: '';
     position: absolute;
     left: 2px;
     right: 2px;
     top: 2px;
     bottom: 2px;
-    width: 100%;
     
     z-index: -1;
     background: #FF0032;
    /* animation: loadProgress 1.5s; */
     border-radius: 90px;
     border: 1px solid #E6E6E6;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
+    //-webkit-transition: 0.3s;
+    //-o-transition: 0.3s;
+    //transition: 0.3s;
     width:15%;
 
 
@@ -1188,7 +1193,7 @@ video {
     opacity: 0;
     pointer-events: none;
 }
-.start_game .slider-progress.animated.go::after {
+.start_game .slider-progress.animated.go o {
     width: 30%;
 }
 @media screen and (min-width: 768px) {
