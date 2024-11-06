@@ -971,6 +971,10 @@ line-height: 110%; /* 39.6px */
     width: 100%;
     background: url('./img/instr/instr7.svg')50% / contain no-repeat;
 }
+.instr8 {
+    width: 100%;
+    background: url('./img/instr/instr8.svg')50% / contain no-repeat;
+}
 .start_game-text {
     font-weight: 500;
     font-size: 24px;
