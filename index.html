@@ -88,7 +88,7 @@
                 class="btn_start_game btn_start_game_video hidden" ontouchstart>Далее</div>
 
         </div>
-        <div id="start_menu" class="screen bg_image welcome_screen">
+        <div id="start_menu" class="screen bg_image welcome_screen ">
             <div class="wrapper">
                 <div class="nav">
                     <div onclick="showMenu(this)" class="info_btn btn_menu" ontouchstart></div>
@@ -150,7 +150,7 @@
                 <div class="hidden_block" style="width: 100%; height: 86px;"></div>
                 <div style="width: calc(100% - 40px); margin: 0 auto;" onclick="showVideo(this), playVideo()"
                     class="btn_start_game">Смотреть обучающее видео</div>
-                <div class="hidden_block" style="width: 100%; height: 54px;"></div>
+                <div class="hidden_block" style="width: 100%; min-height: 54px;"></div>
             </div>
         </div>
         <div id="start_game_1" class="screen start_game hidden">
@@ -161,11 +161,11 @@
                     <div onclick="showInstruction(this)" class="info_btn" ontouchstart></div>
                 </div>
                 <div class="white_bg_container">
-                    <div class="white_bg">
+                    <div class="white_bg white_bg_top">
                         <h1>Начнем <br>
                             с обучения</h1>
                     </div>
-                    <div class="white_bg">
+                    <div class="white_bg white_bg_bottom">
                         <div class="slider">
                             <div class="slide visible">
                                 <p class="game-text">Нажимай на клетки <br>и передвигай шар</p>
@@ -173,7 +173,9 @@
                             </div>
                             <div class="slide ">
                                 <p class="game-text">Соедини стороны <br> мостиков, чтобы попасть <br> с одного куба
-                                    на другой</p>
+                                    на другой. <br>
+                                    А чтобы тебе было<br> удобнее,  ты можешь <br> изменять размеры кубов.
+                                   </p>
                                 <div class="inst_item_img cube_red"></div>
                             </div>
                             <div class="slide ">
@@ -217,20 +219,24 @@
                     <div onclick="showMenu(this)" class="info_btn btn_menu" ontouchstart></div>
                     <div onclick="showInstruction(this)" class="info_btn" ontouchstart></div>
                 </div>
-                <div class="white_bg">
-                    <div class="">
+                <div class="white_bg_container">
+                    <div class="white_bg white_bg_top">
                         <h1>Теперь ты готов.</h1>
-                        <br>
-                        <p class="start_game-text">
-                            Чтобы пройти этот уровень, нужно собрать все иконки и встать на портал.
-                            Начнем?
-                        </p>
                     </div>
-
-                    <div class="inst_item_img instr6"></div>
-                    <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>
-                        Начать игру<o></o></div>
+                    <div class="white_bg white_bg_bottom">
+                        <div class="">
+                           
+                            <p class="start_game-text">
+                                Следуй правилам из обучения и проходи первый уровень. <br>Не забудь, что  для получения промокода необходимо собрать все иконки.
+                            </p>
+                        </div>
+    
+                        <div class="inst_item_img instr6"></div>
+                        <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>
+                            Начать 1 уровень<o></o></div>
+                    </div>
                 </div>
+                
             </div>
         </div>
         <div id="start_game_3" class="screen start_game hidden">
@@ -242,13 +248,15 @@
                 <div class="white_bg">
                     <div class="">
                         <p class="start_game-text">
-                            Есть и другие порталы, которые телепортируют тебя с одного куба на другой. Ищи, чтобы перенести шарик и собрать все иконки сервисов
+                            Есть и другие порталы, которые телепортируют тебя с одного куба на другой. 
+                            Ищи их, чтобы перенести шар на другой куб.
+                            
                         </p>
                     </div>
 
                     <div class="inst_item_img instr8"></div>
                     <div onclick="next(this, 'game');toggleBackImage()" class="btn_start_game animated" ontouchstart>
-                        Начать игру<o></o></div>
+                        Начать 2 уровень<o></o></div>
                 </div>
             </div>
         </div>
@@ -261,14 +269,15 @@
                 <div class="white_bg">
                     <div class="">
                         <p class="start_game-text">
-                            Остался последний уровень, но будь осторожен, тебя ждут новые препятствия
+                            Остался последний уровень, но будь осторожен: тебя ждут новые препятствия. Шар не может попадать на красные клетки кубов и проходить через ограду.
+
                         </p>
                     </div>
                     <div class="inst_item_img instr7"></div>
 
 
                     <div onclick="next(this, 'game');toggleBackImage(); setTimeout(function(){ showSection1() },1000) "
-                        class="btn_start_game animated" ontouchstart>Начать игру<o></o></div>
+                        class="btn_start_game animated" ontouchstart>Начать 3 уровень<o></o></div>
                 </div>
             </div>
         </div>
