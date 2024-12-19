@@ -85,7 +85,7 @@
             </div>
             <video src="video/video_v5.mp4" playsinline></video>
             <div onclick="next(this, 'start_game_1' ); startGame(0), hideSkipVideo()"
-                class="btn_start_game btn_start_game_video hidden" ontouchstart>Далее</div>
+                class="btn_start_game btn_start_game_video " ontouchstart>Далее</div>
 
         </div>
         <div id="start_menu" class="screen bg_image welcome_screen ">
@@ -276,7 +276,7 @@
                     <div class="inst_item_img instr7"></div>
 
 
-                    <div onclick="next(this, 'game');toggleBackImage(); setTimeout(function(){ showSection1() },1000) "
+                    <div onclick="next(this, 'game');toggleBackImage();/* setTimeout(function(){ showSection1() },1000)*/ "
                         class="btn_start_game animated" ontouchstart>Начать 3 уровень<o></o></div>
                 </div>
             </div>
