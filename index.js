@@ -333,12 +333,12 @@ const slideNext = document.querySelector('.slide-next');
 let count = 0;
 function nextSlide() {
    slidePrev.classList.remove('disabled')
-   if(count != sliders.length - 1) {
+   if(count + 1 !== sliders.length ) {
     sliders[count].classList.remove('visible')
     sliders[count + 1].classList.add('visible')
     count++;
    }
-   if(count != sliders.length - 2) { 
+   if(count + 1 === sliders.length) { 
     slideNext.classList.add('disabled')
    }
 }
@@ -354,13 +354,13 @@ function prevSlide() {
        }
  }
 const sliderBtn = document.querySelector('.btn-slider');
-let countProgress = 60;
+let countProgress = 50;
  function sliderProgress() {
      console.log("sliderProgress",countProgress)
     //$("body").append('<style>.start_game .btn-slider.animated.go::after{width: calc(' + countProgress + '% - 6px);}</style>');
 
      $(".start_game .btn-slider.animated.go o").css("width",'calc(' + countProgress + '% - 6px)');
-    countProgress += 40;
+    countProgress += 25;
     if (countProgress > 100) {
         setTimeout(()=> {
             sliderBtn.classList.add('hidden');

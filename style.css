@@ -1016,6 +1016,12 @@ line-height: 110%; /* 39.6px */
     width: 225.592px;
     height: 91.714px;
 }
+.slide4 {
+    background: url('img/instr/slide4.png') 50% / contain no-repeat;
+    max-width: 225.592px;
+    height: 225.592px;
+    margin: 0 auto;
+}
 .instr3 {
     background: url('img/instr/inst3.png') 50% / contain no-repeat;
     width: 225.592px;
