@@ -97,7 +97,7 @@
                 <h1 class="hello">Привет!</h1>
                 <div class="white_bg welcome"> Добро пожаловать <br> в виртуальную игру <br> от МТС. </div>
                 <div class="white_bg promo">
-                    <p>Пройти все уровни <br> и забери подарок!</p>
+                    <p>Пройди все уровни <br> и забери подарок!</p>
                     <div class="btn_group">
                         <div onclick="onClickBtnStartGame(this)" class="btn_start_game" id="launch_button" ontouchstart>
                             Начать игру</div>
@@ -367,10 +367,10 @@
                     <h2>Поздравляем! Ты прошел игру!</h2>
                 </div>
                 <div class="white_bg big">
-                    <p>У тебя получилось собрать <br>все иконки, а это значит, <br>что ты можешь забрать свой
-                        заслуженный промокод <br>на МТС Premium!</p>
+                    <p>У тебя получилось собрать <br> все иконки, а это значит, <br>  что ты можешь забрать свой подарок!  Покажи этот экран промоутеру. </p>
                     <div class="btn_group">
-                        <div id="copy_promocode" onclick="copyPromo()" style="margin-bottom: 10px;"
+                        <!-- Добавил к кнопке display: none; чтобы возможно js не поломался, а так сказали он не нужен -->
+                        <div id="copy_promocode" onclick="copyPromo()" style="margin-bottom: 10px; display: none;" 
                             class="btn_go_info prize promocode" ontouchstart>7V55V6001</div>
                         <div onclick="next(this, 'start_game_2' ); startGame(1);  showBack()" class="btn_start_game"
                             ontouchstart>Пройти игру еще раз</div>
